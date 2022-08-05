@@ -8,13 +8,28 @@
 import Foundation
 import UIKit
 
-struct LoggedInUser {}
-struct FeedItem {}
-struct Follower {}
+// "stage 4" abstraction level
 
-// yet more abstraction and flexibility
+/// Main Module
 
-    
+extension ApiClient {
+    func login(completion: (LoggedInUser) -> Void) {
+        logPrint()
+    }
+}
+
+extension ApiClient {
+    func loadFeed(completion: ([FeedItem]) -> Void) {
+        logPrint()
+    }
+}
+
+extension ApiClient {
+    func loadFollowers(completion: ([Follower]) -> Void) {
+        logPrint()
+    }
+}
+
 // Singleton
 class ApiClient {
     static let shared = ApiClient()
@@ -28,67 +43,48 @@ class ApiClient {
     }
 }
 
-extension ApiClient: LoginClient {
-    func login(completion: (LoggedInUser) -> Void) {
-        logPrint()
-    }
-}
-
-extension ApiClient: FeedClient {
-    func loadFeed(completion: ([FeedItem]) -> Void) {
-        logPrint()
-    }
-}
-
-extension ApiClient: FollowerClient {
-    func loadFollowers(completion: ([Follower]) -> Void) {
-        logPrint()
-    }
-}
-
-
-
-protocol LoginClient {
-    func login(completion: (LoggedInUser) -> Void)
-}
-
 class MockApiClient: ApiClient {}
 
+/// Login Module
+
+struct LoggedInUser {}
+
 class LoginViewController: UIViewController {
-    var api = ApiClient.shared
+    var login: (((LoggedInUser) -> Void) -> Void)?
 
     func didTapLoginButton() {
-        api.login() { user in
+        login? { user in
             // show next screen
         }
     }
 }
 
-protocol FeedClient {
-    func loadFeed(completion: ([FeedItem]) -> Void)
-}
+/// Feed Module
+
+struct FeedItem {}
 
 class FeedViewController: UIViewController {
-    var api = ApiClient.shared
+    var loadFeed: ((([FeedItem]) -> Void) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        api.loadFeed { loadedItems in
+        loadFeed? { loadedItems in
             //update UI
         }
     }
 }
 
-protocol FollowerClient {
-    func loadFollowers(completion: ([Follower]) -> Void)
-}
+
+/// Follower Module
+
+struct Follower {}
 
 class FollowersViewController: UIViewController {
-    var api = ApiClient.shared
+    var loadFollowers: ((([Follower]) -> Void) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        api.loadFollowers { followers in
+        loadFollowers? { followers in
             // update followers' array
         }
     }
