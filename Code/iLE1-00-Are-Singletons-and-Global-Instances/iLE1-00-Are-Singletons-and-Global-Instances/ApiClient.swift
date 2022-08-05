@@ -10,9 +10,11 @@ import UIKit
 
 // "stage 4" abstraction level
 
+// own experimentation
+
 /// Main Module
 
-extension ApiClient {
+extension ApiClient: LogPrint {
     func login(completion: (LoggedInUser) -> Void) {
         logPrint()
     }
@@ -30,17 +32,22 @@ extension ApiClient {
     }
 }
 
-// Singleton
+protocol LogPrint {
+    func logPrint()
+}
+
+extension LogPrint {
+    func logPrint() {
+        print("Called by \(#function) in \(#file) on \(#filePath)")
+    }
+}
+
 class ApiClient {
     static let shared = ApiClient()
     
     private init() {}
     
     func execute(_ : URLRequest, completion: (Data) -> Void) {}
-    
-    func logPrint() {
-        print("Called by \(#function) in \(#file) on \(#filePath)")
-    }
 }
 
 class MockApiClient: ApiClient {}
@@ -49,13 +56,23 @@ class MockApiClient: ApiClient {}
 
 struct LoggedInUser {}
 
+protocol LoginClient {
+    func login(completion: (LoggedInUser) -> Void)
+}
+
+class LoginClientAdapter: LoginClient, LogPrint {
+    func login(completion: (LoggedInUser) -> Void) {
+        logPrint()
+    }
+}
+
 class LoginViewController: UIViewController {
-    var login: (((LoggedInUser) -> Void) -> Void)?
+    var loginAdapter: LoginClientAdapter = LoginClientAdapter()
 
     func didTapLoginButton() {
-        login? { user in
-            // show next screen
-        }
+        loginAdapter.login(completion: { loggedInUser in
+            // etc
+        })
     }
 }
 
@@ -63,14 +80,24 @@ class LoginViewController: UIViewController {
 
 struct FeedItem {}
 
+protocol FeedClient {
+    func loadFeed(completion: ([FeedItem]) -> Void)
+}
+
+class FeedClientAdapter: FeedClient, LogPrint {
+    func loadFeed(completion: ([FeedItem]) -> Void) {
+        logPrint()
+    }
+}
+
 class FeedViewController: UIViewController {
-    var loadFeed: ((([FeedItem]) -> Void) -> Void)?
+    var feedAdapter: FeedClientAdapter = FeedClientAdapter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFeed? { loadedItems in
-            //update UI
-        }
+        feedAdapter.loadFeed(completion: { feedItems in
+            // yada yada
+        })
     }
 }
 
@@ -79,13 +106,23 @@ class FeedViewController: UIViewController {
 
 struct Follower {}
 
+protocol FollowerClient {
+    func loadFollowers(completion: ([Follower]) -> Void)
+}
+
+class FollowerClientAdapter: FollowerClient, LogPrint {
+    func loadFollowers(completion: ([Follower]) -> Void) {
+        logPrint()
+    }
+}
+
 class FollowersViewController: UIViewController {
-    var loadFollowers: ((([Follower]) -> Void) -> Void)?
+    var followerAdapter: FollowerClientAdapter = FollowerClientAdapter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFollowers? { followers in
+        followerAdapter.loadFollowers(completion: { followers in
             // update followers' array
-        }
+        })
     }
 }
