@@ -18,9 +18,13 @@ class ApiClient {
     
     private init() {}
     
+    func execute(_ : URLRequest, completion: (Data) -> Void) {}
+}
+
+// separated a bit, but needs work
+
+extension ApiClient {
     func login(completion: (LoggedInUser) -> Void) {}
-    func loadFeed(completion: ([FeedItem]) -> Void) {}
-    func loadFollowers(completion: ([Follower]) -> Void) {}
 }
 
 class MockApiClient: ApiClient {}
@@ -35,6 +39,10 @@ class LoginViewController: UIViewController {
     }
 }
 
+extension ApiClient {
+    func loadFeed(completion: ([FeedItem]) -> Void) {}
+}
+
 class FeedViewController: UIViewController {
     var api = ApiClient.shared
     
@@ -44,6 +52,10 @@ class FeedViewController: UIViewController {
             //update UI
         }
     }
+}
+
+extension ApiClient {
+    func loadFollowers(completion: ([Follower]) -> Void) {}
 }
 
 class FollowersViewController: UIViewController {
