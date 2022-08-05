@@ -12,6 +12,9 @@ struct LoggedInUser {}
 struct FeedItem {}
 struct Follower {}
 
+// yet more abstraction and flexibility
+
+    
 // Singleton
 class ApiClient {
     static let shared = ApiClient()
@@ -19,12 +22,34 @@ class ApiClient {
     private init() {}
     
     func execute(_ : URLRequest, completion: (Data) -> Void) {}
+    
+    func logPrint() {
+        print("Called by \(#function) in \(#file) on \(#filePath)")
+    }
 }
 
-// separated a bit, but needs work
+extension ApiClient: LoginClient {
+    func login(completion: (LoggedInUser) -> Void) {
+        logPrint()
+    }
+}
 
-extension ApiClient {
-    func login(completion: (LoggedInUser) -> Void) {}
+extension ApiClient: FeedClient {
+    func loadFeed(completion: ([FeedItem]) -> Void) {
+        logPrint()
+    }
+}
+
+extension ApiClient: FollowerClient {
+    func loadFollowers(completion: ([Follower]) -> Void) {
+        logPrint()
+    }
+}
+
+
+
+protocol LoginClient {
+    func login(completion: (LoggedInUser) -> Void)
 }
 
 class MockApiClient: ApiClient {}
@@ -39,8 +64,8 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension ApiClient {
-    func loadFeed(completion: ([FeedItem]) -> Void) {}
+protocol FeedClient {
+    func loadFeed(completion: ([FeedItem]) -> Void)
 }
 
 class FeedViewController: UIViewController {
@@ -54,8 +79,8 @@ class FeedViewController: UIViewController {
     }
 }
 
-extension ApiClient {
-    func loadFollowers(completion: ([Follower]) -> Void) {}
+protocol FollowerClient {
+    func loadFollowers(completion: ([Follower]) -> Void)
 }
 
 class FollowersViewController: UIViewController {
