@@ -93,8 +93,6 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-
-
 ### SwiftPackageManager ###
 Packages
 xcuserdata
@@ -122,3 +120,8 @@ xcuserdata
 Code/iLE1-00-Are-Singletons-and-Global-Instances/iLE1-00-Are-Singletons-and-Global-Instances.xcodeproj/project.xcworkspace/xcuserdata/
 Code/iLE1-00-Are-Singletons-and-Global-Instances/iLE1-00-Are-Singletons-and-Global-Instances.xcodeproj/xcuserdata/
 Code/iLE1-00-Are-Singletons-and-Global-Instances/iLE1-00-Singletons.playground/playground.xcworkspace/
+
+# Merged and resolved for develop, 4 Aug 2022
+.DS_Store
+*.DS_Store
+*/.DS_Store
