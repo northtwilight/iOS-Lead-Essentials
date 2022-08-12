@@ -8,17 +8,5 @@
 import UIKit
 
 final class PlayerScoreViewController: UIViewController {
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
-    
-    var name: String? {
-        set { nameLabel?.text = newValue }
-        get { return nameLabel?.text }
-    }
-    
-    var score: String? {
-        set { scoreLabel?.text = newValue }
-        get { return scoreLabel?.text }
-    }
-
+    @IBOutlet weak var playerView: PlayerView!
 }
