@@ -8,25 +8,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Single Player View Controller-->
-        <scene sceneID="0nx-OH-D2Y">
+        <!--Player Score View Controller-->
+        <scene sceneID="Wi6-86-UKO">
             <objects>
-                <viewController id="P9h-5Y-Mjl" customClass="SinglePlayerViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GRY-oN-5xU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                <viewController id="RTI-jG-7uz" customClass="PlayerScoreViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sJQ-1C-J2d">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="65"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-LC-MwC" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9oL-Ad-R5w" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="65"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Massimo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFx-pw-b59">
-                                        <rect key="frame" x="8" y="8" width="121" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Massimo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kL-49-xcy">
+                                        <rect key="frame" x="8" y="8" width="120" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="ldZ-uP-fRc"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIo-9k-2HQ">
-                                        <rect key="frame" x="8" y="36" width="45" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLt-0Y-yEl">
+                                        <rect key="frame" x="8" y="36" width="120" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="6s7-Bv-Tu7"/>
+                                            <constraint firstAttribute="height" constant="21" id="NAI-P0-MlF"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -34,31 +41,49 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
-                                    <constraint firstItem="kFx-pw-b59" firstAttribute="leading" secondItem="eKc-LC-MwC" secondAttribute="leading" constant="8" id="BMj-1v-SDn"/>
-                                    <constraint firstItem="dIo-9k-2HQ" firstAttribute="leading" secondItem="kFx-pw-b59" secondAttribute="leading" id="I5P-i1-6wf"/>
-                                    <constraint firstItem="kFx-pw-b59" firstAttribute="top" secondItem="eKc-LC-MwC" secondAttribute="top" constant="8" id="v6z-np-pzh"/>
-                                    <constraint firstAttribute="bottom" secondItem="dIo-9k-2HQ" secondAttribute="bottom" constant="8" id="yBM-8X-3q3"/>
+                                    <constraint firstAttribute="height" constant="65" id="02V-gw-09B"/>
+                                    <constraint firstItem="hLt-0Y-yEl" firstAttribute="leading" secondItem="3kL-49-xcy" secondAttribute="leading" id="3sV-bY-x59"/>
+                                    <constraint firstItem="3kL-49-xcy" firstAttribute="leading" secondItem="9oL-Ad-R5w" secondAttribute="leadingMargin" id="YAF-8d-g0G"/>
+                                    <constraint firstItem="hLt-0Y-yEl" firstAttribute="bottom" secondItem="9oL-Ad-R5w" secondAttribute="bottomMargin" id="mu6-MO-Bta"/>
+                                    <constraint firstItem="3kL-49-xcy" firstAttribute="top" secondItem="9oL-Ad-R5w" secondAttribute="top" constant="8" id="wJa-hg-0a8"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="nameLabel" destination="kFx-pw-b59" id="MFB-O9-6yh"/>
-                                    <outlet property="scoreLabel" destination="dIo-9k-2HQ" id="mzm-Dj-a7h"/>
+                                    <outlet property="nameLabel" destination="3kL-49-xcy" id="7By-sw-cWP"/>
+                                    <outlet property="scoreLabel" destination="hLt-0Y-yEl" id="jzd-Eh-LEw"/>
                                 </connections>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="iax-Dp-zJz"/>
+                        <viewLayoutGuide key="safeArea" id="DCv-lp-ESq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iax-Dp-zJz" firstAttribute="trailing" secondItem="eKc-LC-MwC" secondAttribute="trailing" constant="20" id="1sn-2K-FhD"/>
-                            <constraint firstItem="eKc-LC-MwC" firstAttribute="top" secondItem="iax-Dp-zJz" secondAttribute="top" constant="14" id="LqP-y6-Pac"/>
-                            <constraint firstItem="eKc-LC-MwC" firstAttribute="leading" secondItem="iax-Dp-zJz" secondAttribute="leading" constant="20" id="Ppi-fP-aZO"/>
-                            <constraint firstItem="iax-Dp-zJz" firstAttribute="bottom" secondItem="eKc-LC-MwC" secondAttribute="bottom" id="b8C-io-QVU"/>
+                            <constraint firstItem="9oL-Ad-R5w" firstAttribute="height" secondItem="DCv-lp-ESq" secondAttribute="height" id="0yJ-NC-RxT"/>
+                            <constraint firstItem="9oL-Ad-R5w" firstAttribute="top" secondItem="DCv-lp-ESq" secondAttribute="top" id="4pi-2G-ilB"/>
+                            <constraint firstItem="9oL-Ad-R5w" firstAttribute="bottom" secondItem="DCv-lp-ESq" secondAttribute="bottom" id="HHm-Fx-aFX"/>
+                            <constraint firstItem="9oL-Ad-R5w" firstAttribute="width" secondItem="DCv-lp-ESq" secondAttribute="width" id="UxT-5Q-SzV"/>
+                            <constraint firstItem="9oL-Ad-R5w" firstAttribute="centerX" secondItem="sJQ-1C-J2d" secondAttribute="centerX" id="ieu-AP-kpd"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="414" height="65"/>
+                    <size key="freeformSize" width="160" height="65"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yEz-q2-27l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-550" y="21"/>
+        </scene>
+        <!--Single Player View Controller-->
+        <scene sceneID="0nx-OH-D2Y">
+            <objects>
+                <viewController id="P9h-5Y-Mjl" customClass="SinglePlayerViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GRY-oN-5xU">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="65"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="iax-Dp-zJz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <size key="freeformSize" width="160" height="65"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDk-s6-Pjt" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="123"/>
+            <point key="canvasLocation" x="21.739130434782609" y="122.87946428571428"/>
         </scene>
     </scenes>
     <resources>

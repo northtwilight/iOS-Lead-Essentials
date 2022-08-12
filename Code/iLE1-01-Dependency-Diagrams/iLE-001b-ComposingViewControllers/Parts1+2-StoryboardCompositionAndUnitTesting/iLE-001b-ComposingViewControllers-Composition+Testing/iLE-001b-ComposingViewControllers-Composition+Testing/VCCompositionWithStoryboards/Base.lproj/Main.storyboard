@@ -19,12 +19,22 @@
                     </tabBar>
                     <connections>
                         <segue destination="jMF-7O-PBE" kind="relationship" relationship="viewControllers" id="7Er-PM-aWK"/>
-                        <segue destination="nN0-jX-lnw" kind="relationship" relationship="viewControllers" id="aUd-4O-yhD"/>
+                        <segue destination="Huk-WY-PUx" kind="relationship" relationship="viewControllers" id="a2m-2s-Lf1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAP-jE-jYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1720" y="68"/>
+        </scene>
+        <!--MultiplayerGame-->
+        <scene sceneID="X8j-UL-4bg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MultiplayerGame" id="Huk-WY-PUx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="TNc-9A-ucE"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pU2-Bz-GOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1022" y="228"/>
         </scene>
         <!--SinglePlayerGame-->
         <scene sceneID="rPu-vU-i9S">
@@ -34,7 +44,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Il7-dm-Qcl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-874" y="-256"/>
+            <point key="canvasLocation" x="-1023" y="-133"/>
         </scene>
         <!--Item-->
         <scene sceneID="6jI-Wc-7do">
@@ -120,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sra-5J-uV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-810" y="418"/>
+            <point key="canvasLocation" x="-29" y="374"/>
         </scene>
     </scenes>
     <resources>

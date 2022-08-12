@@ -13,20 +13,20 @@
             <objects>
                 <viewController id="NzL-7S-qMM" userLabel="Multiplayer View Controller" customClass="MultiplayerViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="78G-ee-x2O">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="65"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xMB-xb-QfQ" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Massimo" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWi-Kd-88b">
-                                        <rect key="frame" x="285" y="8" width="121" height="22"/>
+                                        <rect key="frame" x="20" y="8" width="121" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vev-Vy-cxv">
-                                        <rect key="frame" x="361" y="38" width="45" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vev-Vy-cxv">
+                                        <rect key="frame" x="96" y="36" width="45" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -35,6 +35,7 @@
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mWi-Kd-88b" secondAttribute="trailing" constant="8" id="TNx-oj-6k0"/>
+                                    <constraint firstItem="vev-Vy-cxv" firstAttribute="trailing" secondItem="mWi-Kd-88b" secondAttribute="trailing" id="fP0-MP-fpL"/>
                                     <constraint firstAttribute="bottom" secondItem="vev-Vy-cxv" secondAttribute="bottom" constant="8" id="hLr-I2-wph"/>
                                     <constraint firstItem="vev-Vy-cxv" firstAttribute="top" secondItem="mWi-Kd-88b" secondAttribute="bottom" constant="6" id="nc6-dX-heb"/>
                                     <constraint firstItem="mWi-Kd-88b" firstAttribute="top" secondItem="xMB-xb-QfQ" secondAttribute="top" constant="8" id="y2v-MI-p9F"/>
@@ -50,11 +51,10 @@
                         <constraints>
                             <constraint firstItem="xMB-xb-QfQ" firstAttribute="leading" secondItem="IV1-ql-H5I" secondAttribute="leading" constant="20" id="35O-1t-sGa"/>
                             <constraint firstItem="IV1-ql-H5I" firstAttribute="bottom" secondItem="xMB-xb-QfQ" secondAttribute="bottom" id="5ki-MH-klc"/>
-                            <constraint firstItem="xMB-xb-QfQ" firstAttribute="top" secondItem="IV1-ql-H5I" secondAttribute="top" constant="14" id="Wj3-KK-od0"/>
                             <constraint firstItem="IV1-ql-H5I" firstAttribute="trailing" secondItem="xMB-xb-QfQ" secondAttribute="trailing" constant="20" id="iMj-YC-pVZ"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="414" height="65"/>
+                    <size key="freeformSize" width="160" height="65"/>
                     <connections>
                         <outlet property="playerTwo" destination="xMB-xb-QfQ" id="wTU-iA-EvL"/>
                     </connections>
