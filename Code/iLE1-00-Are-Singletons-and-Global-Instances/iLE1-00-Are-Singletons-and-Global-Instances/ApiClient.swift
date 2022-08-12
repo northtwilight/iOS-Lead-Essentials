@@ -55,9 +55,16 @@ class ApiClient {
 class MockApiClient: ApiClient {}
 
 /// Main module
+
+
+
+
+
+
+
+/// Login Module
+
 protocol LoginClient {}
-protocol FeedClient {}
-protocol FollowerClient {}
 
 extension LoginClient {
     func login(completion: @escaping (LoggedInUser) -> Void) {
@@ -65,23 +72,6 @@ extension LoginClient {
         logPrinter.logPrint()
     }
 }
-
-extension FeedClient {
-    func loadFeed(completion: @escaping ([FeedItem]) -> Void) {
-        let logPrinter = LogPrinter()
-        logPrinter.logPrint()
-    }
-}
-
-extension FollowerClient {
-    func loadFollowers(completion: @escaping([Follower]) -> Void) {
-        let logPrinter = LogPrinter()
-        logPrinter.logPrint()
-    }
-}
-
-
-/// Login Module
 
 class LoginClientAdapter: LoginClient {
     func login(completion: (LoggedInUser) -> Void) {
@@ -103,12 +93,20 @@ class LoginViewController: UIViewController {
 
 /// Feed Module
 
+protocol FeedClient {}
+
+extension FeedClient {
+    func loadFeed(completion: @escaping ([FeedItem]) -> Void) {
+        let logPrinter = LogPrinter()
+        logPrinter.logPrint()
+    }
+}
+
 class FeedClientAdapter: FeedClient {
     func loadFeed(completion: ([FeedItem]) -> Void) {
         // etc
     }
 }
-
 
 class FeedViewController: UIViewController {
     var feedAdapter: FeedClientAdapter = FeedClientAdapter()
@@ -123,6 +121,15 @@ class FeedViewController: UIViewController {
 
 
 /// Follower Module
+
+protocol FollowerClient {}
+
+extension FollowerClient {
+    func loadFollowers(completion: @escaping([Follower]) -> Void) {
+        let logPrinter = LogPrinter()
+        logPrinter.logPrint()
+    }
+}
 
 class FollowerClientAdapter: FollowerClient {
     func loadFollowers(completion: ([Follower]) -> Void) {

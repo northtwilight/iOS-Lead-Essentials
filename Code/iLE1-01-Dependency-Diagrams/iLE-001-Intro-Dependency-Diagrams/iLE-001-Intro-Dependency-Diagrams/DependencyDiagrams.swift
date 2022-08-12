@@ -36,7 +36,7 @@ class RemoteFeedLoader: FeedLoader {
 
 class LocalFeedLoader: FeedLoader {
     func loadFeed(completion: @escaping ([String]) -> Void) {
-        // do something
+        // do something different
     }
 }
 
@@ -54,6 +54,12 @@ class RemoteWithLocalFallbackFeedLoader: FeedLoader {
     }
     
     func loadFeed(completion:  @escaping ([String]) -> Void) {
+        let load = Reachability.networkAvailable ? remote.loadFeed : local.loadFeed
+        load(completion)
+        
+        // or
+        
+        /**
         if Reachability.networkAvailable {
             remote.loadFeed { loadedItems in
                 // do something
@@ -64,5 +70,31 @@ class RemoteWithLocalFallbackFeedLoader: FeedLoader {
                 // do something
             }
         }
+        */
+        
     }
 }
+    
+struct Faked {
+    func asIfPlayground() {
+        // ie
+        
+        let vc = FeedViewController(loader: RemoteFeedLoader())
+        let vc2 = FeedViewController(loader: LocalFeedLoader())
+
+        let alternatingLoader = RemoteWithLocalFallbackFeedLoader(
+            remote: RemoteFeedLoader(),
+            local: LocalFeedLoader())
+
+        let vc3 = FeedViewController()
+        vc3.loader = RemoteWithLocalFallbackFeedLoader(
+            remote: RemoteFeedLoader(),
+            local: LocalFeedLoader())
+
+        // vc3.loader = alternatingLoader
+    }
+}
+
+
+
+
