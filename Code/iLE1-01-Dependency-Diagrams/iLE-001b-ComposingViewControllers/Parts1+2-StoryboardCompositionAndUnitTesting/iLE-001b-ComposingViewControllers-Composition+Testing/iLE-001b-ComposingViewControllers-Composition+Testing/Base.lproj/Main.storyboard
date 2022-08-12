@@ -59,6 +59,79 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="6jI-Wc-7do">
+            <objects>
+                <viewController id="nN0-jX-lnw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fhk-dO-Y09">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjO-IH-VjA">
+                                <rect key="frame" x="20" y="57" width="170" height="73"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Massimo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBT-nr-TeY">
+                                        <rect key="frame" x="8" y="8" width="121" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQT-Br-cPu">
+                                        <rect key="frame" x="8" y="44" width="45" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Bpt-tj-95q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstItem="GBT-nr-TeY" firstAttribute="top" secondItem="EjO-IH-VjA" secondAttribute="top" constant="8" id="HAC-12-PaL"/>
+                                    <constraint firstItem="GBT-nr-TeY" firstAttribute="leading" secondItem="EjO-IH-VjA" secondAttribute="leading" constant="8" id="bqB-gb-JyZ"/>
+                                    <constraint firstItem="IQT-Br-cPu" firstAttribute="top" secondItem="GBT-nr-TeY" secondAttribute="bottom" constant="12" id="nXP-RR-Neo"/>
+                                    <constraint firstItem="IQT-Br-cPu" firstAttribute="leading" secondItem="GBT-nr-TeY" secondAttribute="leading" id="tEN-CA-8R4"/>
+                                    <constraint firstAttribute="bottom" secondItem="IQT-Br-cPu" secondAttribute="bottom" constant="10" id="zA0-2l-xwS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lML-yi-SqK">
+                                <rect key="frame" x="224" y="57" width="170" height="73"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Massimo" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcY-iL-avx">
+                                        <rect key="frame" x="41" y="8" width="121" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7q-6f-AvA">
+                                        <rect key="frame" x="117" y="44" width="45" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="fgB-WP-IP0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstItem="T7q-6f-AvA" firstAttribute="top" secondItem="xcY-iL-avx" secondAttribute="bottom" constant="12" id="DiB-f8-1ZE"/>
+                                    <constraint firstItem="xcY-iL-avx" firstAttribute="top" secondItem="lML-yi-SqK" secondAttribute="top" constant="8" id="MR9-MO-gMy"/>
+                                    <constraint firstItem="xcY-iL-avx" firstAttribute="leading" secondItem="lML-yi-SqK" secondAttribute="leading" constant="8" id="Zwg-r3-SUJ"/>
+                                    <constraint firstItem="T7q-6f-AvA" firstAttribute="leading" secondItem="xcY-iL-avx" secondAttribute="leading" id="bBf-W4-JIH"/>
+                                    <constraint firstAttribute="bottom" secondItem="T7q-6f-AvA" secondAttribute="bottom" constant="10" id="rIJ-eh-0A3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="O1f-KX-ZWn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sra-5J-uV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="795.6521739130435" y="97.767857142857139"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
@@ -66,6 +139,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
