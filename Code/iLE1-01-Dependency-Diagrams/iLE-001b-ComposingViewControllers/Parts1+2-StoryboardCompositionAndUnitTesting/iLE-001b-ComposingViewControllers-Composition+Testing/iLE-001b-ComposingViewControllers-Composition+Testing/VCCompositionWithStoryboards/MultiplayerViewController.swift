@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MultiplayerViewController: UIViewController {
+final class PlayerView: UIView {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -20,5 +20,9 @@ class MultiplayerViewController: UIViewController {
         set { scoreLabel?.text = newValue }
         get { return scoreLabel?.text }
     }
+}
 
+class MultiplayerViewController: UIViewController {
+    @IBOutlet weak var playerOne: PlayerView?
+    @IBOutlet weak var playerTwo: PlayerView?
 }

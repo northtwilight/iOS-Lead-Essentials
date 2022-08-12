@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qej-hT-5dj">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qej-hT-5dj" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
                                 <rect key="frame" x="20" y="58" width="374" height="73"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Massimo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flq-e0-MBb">
@@ -43,6 +43,10 @@
                                     <constraint firstItem="flq-e0-MBb" firstAttribute="leading" secondItem="Qej-hT-5dj" secondAttribute="leading" constant="8" id="uUl-Kn-bIk"/>
                                     <constraint firstItem="ap6-g5-GsT" firstAttribute="top" secondItem="flq-e0-MBb" secondAttribute="bottom" constant="12" id="zub-a2-hPr"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="nameLabel" destination="flq-e0-MBb" id="fco-KD-2TF"/>
+                                    <outlet property="scoreLabel" destination="ap6-g5-GsT" id="8M6-ow-fi8"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -54,10 +58,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qej-hT-5dj" secondAttribute="trailing" constant="20" id="xHN-TE-5Pm"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="nameLabel" destination="flq-e0-MBb" id="Dsb-jw-21J"/>
-                        <outlet property="scoreLabel" destination="ap6-g5-GsT" id="3YW-cq-BF4"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,16 +71,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjO-IH-VjA">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjO-IH-VjA" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
                                 <rect key="frame" x="20" y="57" width="170" height="73"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Massimo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBT-nr-TeY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Massimo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBT-nr-TeY" userLabel="Name Label">
                                         <rect key="frame" x="8" y="8" width="121" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQT-Br-cPu">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQT-Br-cPu" userLabel="Score Label">
                                         <rect key="frame" x="8" y="44" width="45" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Bpt-tj-95q"/>
@@ -98,8 +98,12 @@
                                     <constraint firstItem="IQT-Br-cPu" firstAttribute="leading" secondItem="GBT-nr-TeY" secondAttribute="leading" id="tEN-CA-8R4"/>
                                     <constraint firstAttribute="bottom" secondItem="IQT-Br-cPu" secondAttribute="bottom" constant="10" id="zA0-2l-xwS"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="nameLabel" destination="GBT-nr-TeY" id="qnR-kq-8z6"/>
+                                    <outlet property="scoreLabel" destination="IQT-Br-cPu" id="XRd-b2-S5Y"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lML-yi-SqK">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lML-yi-SqK" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
                                 <rect key="frame" x="224" y="57" width="170" height="73"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Omissam" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcY-iL-avx">
@@ -126,14 +130,18 @@
                                     <constraint firstItem="T7q-6f-AvA" firstAttribute="leading" secondItem="xcY-iL-avx" secondAttribute="leading" id="bBf-W4-JIH"/>
                                     <constraint firstAttribute="bottom" secondItem="T7q-6f-AvA" secondAttribute="bottom" constant="10" id="rIJ-eh-0A3"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="nameLabel" destination="xcY-iL-avx" id="Zaa-o7-rab"/>
+                                    <outlet property="scoreLabel" destination="T7q-6f-AvA" id="ZqS-jT-Xjp"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O1f-KX-ZWn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="nameLabel" destination="xcY-iL-avx" id="o3x-e4-eoU"/>
-                        <outlet property="scoreLabel" destination="T7q-6f-AvA" id="P6I-ST-kbn"/>
+                        <outlet property="playerOne" destination="EjO-IH-VjA" id="7bp-Ws-nmF"/>
+                        <outlet property="playerTwo" destination="lML-yi-SqK" id="EeY-dP-DeF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sra-5J-uV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
