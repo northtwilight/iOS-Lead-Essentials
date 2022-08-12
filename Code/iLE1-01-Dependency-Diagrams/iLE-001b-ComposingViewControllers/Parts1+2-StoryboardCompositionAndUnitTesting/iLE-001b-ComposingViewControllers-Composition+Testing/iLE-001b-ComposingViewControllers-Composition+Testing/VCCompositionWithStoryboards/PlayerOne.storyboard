@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P9h-5Y-Mjl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Single Player View Controller-->
+        <scene sceneID="0nx-OH-D2Y">
+            <objects>
+                <viewController id="P9h-5Y-Mjl" customClass="SinglePlayerViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GRY-oN-5xU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-LC-MwC" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Massimo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFx-pw-b59">
+                                        <rect key="frame" x="8" y="8" width="121" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIo-9k-2HQ">
+                                        <rect key="frame" x="8" y="36" width="45" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstItem="kFx-pw-b59" firstAttribute="leading" secondItem="eKc-LC-MwC" secondAttribute="leading" constant="8" id="BMj-1v-SDn"/>
+                                    <constraint firstItem="dIo-9k-2HQ" firstAttribute="leading" secondItem="kFx-pw-b59" secondAttribute="leading" id="I5P-i1-6wf"/>
+                                    <constraint firstItem="kFx-pw-b59" firstAttribute="top" secondItem="eKc-LC-MwC" secondAttribute="top" constant="8" id="v6z-np-pzh"/>
+                                    <constraint firstAttribute="bottom" secondItem="dIo-9k-2HQ" secondAttribute="bottom" constant="8" id="yBM-8X-3q3"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="nameLabel" destination="kFx-pw-b59" id="MFB-O9-6yh"/>
+                                    <outlet property="scoreLabel" destination="dIo-9k-2HQ" id="mzm-Dj-a7h"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iax-Dp-zJz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iax-Dp-zJz" firstAttribute="trailing" secondItem="eKc-LC-MwC" secondAttribute="trailing" constant="20" id="1sn-2K-FhD"/>
+                            <constraint firstItem="eKc-LC-MwC" firstAttribute="top" secondItem="iax-Dp-zJz" secondAttribute="top" constant="14" id="LqP-y6-Pac"/>
+                            <constraint firstItem="eKc-LC-MwC" firstAttribute="leading" secondItem="iax-Dp-zJz" secondAttribute="leading" constant="20" id="Ppi-fP-aZO"/>
+                            <constraint firstItem="iax-Dp-zJz" firstAttribute="bottom" secondItem="eKc-LC-MwC" secondAttribute="bottom" id="b8C-io-QVU"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="65"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDk-s6-Pjt" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="123"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
