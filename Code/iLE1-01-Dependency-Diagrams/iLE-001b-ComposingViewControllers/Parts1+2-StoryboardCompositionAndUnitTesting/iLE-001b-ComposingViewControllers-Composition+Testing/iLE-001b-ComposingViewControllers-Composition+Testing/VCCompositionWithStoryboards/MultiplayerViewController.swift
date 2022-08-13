@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class MultiplayerViewController: UIViewController {
     @IBOutlet weak var playerOne: PlayerScoreViewController?
     @IBOutlet weak var playerTwo: PlayerScoreViewController?

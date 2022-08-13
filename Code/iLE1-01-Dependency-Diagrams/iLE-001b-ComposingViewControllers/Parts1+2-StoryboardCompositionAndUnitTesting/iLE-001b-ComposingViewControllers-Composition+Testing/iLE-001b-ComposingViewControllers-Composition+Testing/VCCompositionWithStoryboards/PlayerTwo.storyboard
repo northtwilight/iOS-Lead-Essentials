@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NzL-7S-qMM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rQN-S9-Nu3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,68 +8,72 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Multiplayer View Controller-->
-        <scene sceneID="QBZ-4d-X5U">
+        <!--Player Score View Controller-->
+        <scene sceneID="Wi1-ee-XXl">
             <objects>
-                <viewController id="NzL-7S-qMM" userLabel="Multiplayer View Controller" customClass="MultiplayerViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="78G-ee-x2O">
-                        <rect key="frame" x="0.0" y="0.0" width="160" height="65"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <viewController id="rQN-S9-Nu3" customClass="PlayerScoreViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bLp-fO-baV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xMB-xb-QfQ" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b44-y3-aMe" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Massimo" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWi-Kd-88b">
-                                        <rect key="frame" x="20" y="8" width="121" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taylor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43c-R3-y8J">
+                                        <rect key="frame" x="360" y="4" width="46" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vev-Vy-cxv">
-                                        <rect key="frame" x="96" y="36" width="45" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3,240" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbD-OI-UIG">
+                                        <rect key="frame" x="361.5" y="36" width="44.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" systemColor="systemOrangeColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="mWi-Kd-88b" secondAttribute="trailing" constant="8" id="TNx-oj-6k0"/>
-                                    <constraint firstItem="vev-Vy-cxv" firstAttribute="trailing" secondItem="mWi-Kd-88b" secondAttribute="trailing" id="fP0-MP-fpL"/>
-                                    <constraint firstAttribute="bottom" secondItem="vev-Vy-cxv" secondAttribute="bottom" constant="8" id="hLr-I2-wph"/>
-                                    <constraint firstItem="vev-Vy-cxv" firstAttribute="top" secondItem="mWi-Kd-88b" secondAttribute="bottom" constant="6" id="nc6-dX-heb"/>
-                                    <constraint firstItem="mWi-Kd-88b" firstAttribute="top" secondItem="xMB-xb-QfQ" secondAttribute="top" constant="8" id="y2v-MI-p9F"/>
+                                    <constraint firstAttribute="bottom" secondItem="MbD-OI-UIG" secondAttribute="bottom" constant="8" id="YLf-zs-J0L"/>
+                                    <constraint firstItem="MbD-OI-UIG" firstAttribute="trailing" secondItem="43c-R3-y8J" secondAttribute="trailing" id="YeB-3f-d2M"/>
+                                    <constraint firstItem="43c-R3-y8J" firstAttribute="top" secondItem="b44-y3-aMe" secondAttribute="top" constant="4" id="fB7-SF-iYy"/>
+                                    <constraint firstItem="MbD-OI-UIG" firstAttribute="top" secondItem="43c-R3-y8J" secondAttribute="bottom" constant="11" id="nUs-8l-IfY"/>
+                                    <constraint firstItem="43c-R3-y8J" firstAttribute="trailing" secondItem="b44-y3-aMe" secondAttribute="trailing" constant="-8" id="oi4-tZ-oof" userLabel="Label.trailing = trailing - 8"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="nameLabel" destination="mWi-Kd-88b" id="Olr-d7-Y8R"/>
-                                    <outlet property="scoreLabel" destination="vev-Vy-cxv" id="Ahn-xm-fXL"/>
+                                    <outlet property="nameLabel" destination="43c-R3-y8J" id="M6D-Qh-0Z9"/>
+                                    <outlet property="scoreLabel" destination="MbD-OI-UIG" id="HJv-PR-isE"/>
                                 </connections>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="IV1-ql-H5I"/>
+                        <viewLayoutGuide key="safeArea" id="NbO-08-XGG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xMB-xb-QfQ" firstAttribute="leading" secondItem="IV1-ql-H5I" secondAttribute="leading" constant="20" id="35O-1t-sGa"/>
-                            <constraint firstItem="IV1-ql-H5I" firstAttribute="bottom" secondItem="xMB-xb-QfQ" secondAttribute="bottom" id="5ki-MH-klc"/>
-                            <constraint firstItem="IV1-ql-H5I" firstAttribute="trailing" secondItem="xMB-xb-QfQ" secondAttribute="trailing" constant="20" id="iMj-YC-pVZ"/>
+                            <constraint firstItem="b44-y3-aMe" firstAttribute="width" secondItem="bLp-fO-baV" secondAttribute="width" id="Is1-Ho-OQt"/>
+                            <constraint firstItem="b44-y3-aMe" firstAttribute="centerY" secondItem="bLp-fO-baV" secondAttribute="centerY" id="QwA-Ss-36D"/>
+                            <constraint firstItem="b44-y3-aMe" firstAttribute="centerX" secondItem="bLp-fO-baV" secondAttribute="centerX" id="ca5-du-giJ"/>
+                            <constraint firstItem="b44-y3-aMe" firstAttribute="height" secondItem="bLp-fO-baV" secondAttribute="height" id="kVr-ha-UdJ"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="160" height="65"/>
-                    <connections>
-                        <outlet property="playerTwo" destination="xMB-xb-QfQ" id="wTU-iA-EvL"/>
-                    </connections>
+                    <size key="freeformSize" width="414" height="65"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ru1-Ld-6Ck" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9X-x2-QG8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="123"/>
+            <point key="canvasLocation" x="-478.26086956521743" y="43.861607142857139"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

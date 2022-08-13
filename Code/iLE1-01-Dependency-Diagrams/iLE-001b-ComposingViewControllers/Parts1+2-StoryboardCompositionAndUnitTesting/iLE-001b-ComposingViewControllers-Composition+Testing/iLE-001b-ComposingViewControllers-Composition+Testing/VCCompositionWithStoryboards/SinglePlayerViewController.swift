@@ -8,7 +8,5 @@
 import UIKit
 
 final class SinglePlayerViewController: UIViewController {
-    @IBOutlet weak var playerView: PlayerView!
-    
-    // weak var playerOne: PlayerScoreViewController?
+    @IBOutlet weak var playerOne: PlayerScoreViewController?
 }

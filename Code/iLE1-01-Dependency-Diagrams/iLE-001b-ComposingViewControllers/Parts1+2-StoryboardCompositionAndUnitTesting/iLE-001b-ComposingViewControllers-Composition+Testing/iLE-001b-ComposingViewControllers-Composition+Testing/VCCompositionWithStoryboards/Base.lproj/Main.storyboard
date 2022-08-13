@@ -30,7 +30,7 @@
         <scene sceneID="X8j-UL-4bg">
             <objects>
                 <viewControllerPlaceholder storyboardName="MultiplayerGame" id="Huk-WY-PUx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="TNc-9A-ucE"/>
+                    <tabBarItem key="tabBarItem" title="Multiplayer" id="TNc-9A-ucE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pU2-Bz-GOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -40,7 +40,7 @@
         <scene sceneID="rPu-vU-i9S">
             <objects>
                 <viewControllerPlaceholder storyboardName="SinglePlayerGame" id="jMF-7O-PBE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="qmG-h1-zD5"/>
+                    <tabBarItem key="tabBarItem" title="Single Player" id="qmG-h1-zD5"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Il7-dm-Qcl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,6 +49,7 @@
         <!--Item-->
         <scene sceneID="6jI-Wc-7do">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sra-5J-uV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="nN0-jX-lnw" customClass="MultiplayerViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fhk-dO-Y09">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -128,7 +129,6 @@
                         <outlet property="playerTwo" destination="lML-yi-SqK" id="EeY-dP-DeF"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sra-5J-uV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-29" y="374"/>
         </scene>
