@@ -1,147 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zh3-tE-d0I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="shq-JQ-AS2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="bZm-mu-88F">
-            <objects>
-                <tabBarController id="Zh3-tE-d0I" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yPX-jm-PDD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="jMF-7O-PBE" kind="relationship" relationship="viewControllers" id="7Er-PM-aWK"/>
-                        <segue destination="Huk-WY-PUx" kind="relationship" relationship="viewControllers" id="a2m-2s-Lf1"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OAP-jE-jYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1720" y="68"/>
-        </scene>
         <!--MultiplayerGame-->
         <scene sceneID="X8j-UL-4bg">
             <objects>
                 <viewControllerPlaceholder storyboardName="MultiplayerGame" id="Huk-WY-PUx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Multiplayer" id="TNc-9A-ucE"/>
+                    <tabBarItem key="tabBarItem" title="Multiplayer" image=" " id="TNc-9A-ucE">
+                        <color key="badgeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pU2-Bz-GOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1022" y="228"/>
+            <point key="canvasLocation" x="-1753" y="272"/>
         </scene>
         <!--SinglePlayerGame-->
         <scene sceneID="rPu-vU-i9S">
             <objects>
                 <viewControllerPlaceholder storyboardName="SinglePlayerGame" id="jMF-7O-PBE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Single Player" id="qmG-h1-zD5"/>
+                    <tabBarItem key="tabBarItem" title="Single Player" id="qmG-h1-zD5">
+                        <color key="badgeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Il7-dm-Qcl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1023" y="-133"/>
+            <point key="canvasLocation" x="-1758" y="-89"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="6jI-Wc-7do">
+        <!--Tab Bar Controller-->
+        <scene sceneID="HRx-IA-edh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sra-5J-uV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="nN0-jX-lnw" customClass="MultiplayerViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Fhk-dO-Y09">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjO-IH-VjA" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
-                                <rect key="frame" x="20" y="57" width="170" height="73"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Massimo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBT-nr-TeY" userLabel="Name Label">
-                                        <rect key="frame" x="8" y="8" width="121" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQT-Br-cPu" userLabel="Score Label">
-                                        <rect key="frame" x="8" y="44" width="45" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="Bpt-tj-95q"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                                <constraints>
-                                    <constraint firstItem="GBT-nr-TeY" firstAttribute="top" secondItem="EjO-IH-VjA" secondAttribute="top" constant="8" id="HAC-12-PaL"/>
-                                    <constraint firstItem="GBT-nr-TeY" firstAttribute="leading" secondItem="EjO-IH-VjA" secondAttribute="leading" constant="8" id="bqB-gb-JyZ"/>
-                                    <constraint firstItem="IQT-Br-cPu" firstAttribute="top" secondItem="GBT-nr-TeY" secondAttribute="bottom" constant="12" id="nXP-RR-Neo"/>
-                                    <constraint firstItem="IQT-Br-cPu" firstAttribute="leading" secondItem="GBT-nr-TeY" secondAttribute="leading" id="tEN-CA-8R4"/>
-                                    <constraint firstAttribute="bottom" secondItem="IQT-Br-cPu" secondAttribute="bottom" constant="10" id="zA0-2l-xwS"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="nameLabel" destination="GBT-nr-TeY" id="qnR-kq-8z6"/>
-                                    <outlet property="scoreLabel" destination="IQT-Br-cPu" id="XRd-b2-S5Y"/>
-                                </connections>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lML-yi-SqK" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
-                                <rect key="frame" x="224" y="57" width="170" height="73"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Omissam" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcY-iL-avx">
-                                        <rect key="frame" x="41" y="8" width="121" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="7,654" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7q-6f-AvA">
-                                        <rect key="frame" x="117" y="44" width="45" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="fgB-WP-IP0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <constraints>
-                                    <constraint firstItem="T7q-6f-AvA" firstAttribute="top" secondItem="xcY-iL-avx" secondAttribute="bottom" constant="12" id="DiB-f8-1ZE"/>
-                                    <constraint firstItem="xcY-iL-avx" firstAttribute="top" secondItem="lML-yi-SqK" secondAttribute="top" constant="8" id="MR9-MO-gMy"/>
-                                    <constraint firstItem="xcY-iL-avx" firstAttribute="leading" secondItem="lML-yi-SqK" secondAttribute="leading" constant="8" id="Zwg-r3-SUJ"/>
-                                    <constraint firstItem="T7q-6f-AvA" firstAttribute="leading" secondItem="xcY-iL-avx" secondAttribute="leading" id="bBf-W4-JIH"/>
-                                    <constraint firstAttribute="bottom" secondItem="T7q-6f-AvA" secondAttribute="bottom" constant="10" id="rIJ-eh-0A3"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="nameLabel" destination="xcY-iL-avx" id="Zaa-o7-rab"/>
-                                    <outlet property="scoreLabel" destination="T7q-6f-AvA" id="ZqS-jT-Xjp"/>
-                                </connections>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="O1f-KX-ZWn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="AyB-eI-NSd"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LOg-8l-Cd9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarController id="shq-JQ-AS2" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UJy-B6-z4t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
                     <connections>
-                        <outlet property="playerOne" destination="EjO-IH-VjA" id="7bp-Ws-nmF"/>
-                        <outlet property="playerTwo" destination="lML-yi-SqK" id="EeY-dP-DeF"/>
+                        <segue destination="jMF-7O-PBE" kind="relationship" relationship="viewControllers" id="HW3-GR-LwA"/>
+                        <segue destination="Huk-WY-PUx" kind="relationship" relationship="viewControllers" id="4ml-9x-Epk"/>
                     </connections>
-                </viewController>
+                </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-29" y="374"/>
+            <point key="canvasLocation" x="-2407" y="45"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name=" " width="128" height="128"/>
     </resources>
 </document>

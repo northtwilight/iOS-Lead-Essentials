@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="275" y="-293"/>
         </scene>
-        <!--Multiplayer View Controller-->
+        <!--Multiplayer-->
         <scene sceneID="2kx-aN-zQ6">
             <objects>
                 <viewController id="WCr-Ie-MkY" customClass="MultiplayerViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,18 +37,16 @@
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="fC6-03-1gh"/>
-                                    <constraint firstAttribute="width" constant="160" id="mx1-O8-SKH"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="XYh-8B-bgY" kind="embed" id="d2m-7A-rvr"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qvh-Bt-6UX">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvh-Bt-6UX">
                                 <rect key="frame" x="234" y="44" width="160" height="65"/>
                                 <color key="backgroundColor" systemColor="systemMintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="7XU-Iy-sks"/>
-                                    <constraint firstAttribute="width" constant="160" id="FnX-E8-OLg"/>
                                     <constraint firstAttribute="height" constant="65" id="iBI-OH-Akh"/>
                                 </constraints>
                                 <connections>
@@ -64,10 +62,12 @@
                             <constraint firstItem="qvh-Bt-6UX" firstAttribute="top" secondItem="dnX-dL-1Iz" secondAttribute="top" id="NCQ-el-ASq"/>
                             <constraint firstItem="dnX-dL-1Iz" firstAttribute="top" secondItem="qKg-eJ-F4l" secondAttribute="top" id="caH-tm-ypV"/>
                             <constraint firstItem="qKg-eJ-F4l" firstAttribute="leading" secondItem="dnX-dL-1Iz" secondAttribute="leading" constant="20" id="e73-t0-Otx"/>
-                            <constraint firstItem="qvh-Bt-6UX" firstAttribute="leading" secondItem="qKg-eJ-F4l" secondAttribute="trailing" constant="32" id="idY-9G-AIy"/>
+                            <constraint firstItem="qvh-Bt-6UX" firstAttribute="leading" secondItem="qKg-eJ-F4l" secondAttribute="trailing" constant="54" id="idY-9G-AIy"/>
                             <constraint firstItem="qvh-Bt-6UX" firstAttribute="bottom" secondItem="qKg-eJ-F4l" secondAttribute="bottom" id="q8F-DK-UIx"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Multiplayer" id="9IY-D1-Gsd"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHc-iI-OrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
