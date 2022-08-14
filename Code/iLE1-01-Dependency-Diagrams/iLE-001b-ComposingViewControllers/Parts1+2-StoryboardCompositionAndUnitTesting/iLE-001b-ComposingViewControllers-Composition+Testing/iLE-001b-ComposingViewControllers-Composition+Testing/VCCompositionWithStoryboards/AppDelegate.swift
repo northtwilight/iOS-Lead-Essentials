@@ -10,7 +10,26 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        var window: UIWindow?
+        
+        if let views = (window?.rootViewController as? UITabBarController)?.viewControllers,
+           let single = views[0] as? SinglePlayerViewController,
+           let multi = views[1] as? MultiplayerViewController,
+           let timed = views[2] as? TimedMultiplayerViewController {
+            
+            _ = single.view
+            _ = multi.view
+            _ = timed.view
+            
+            single.playerOne?.playerView.nameLabel.text = "TestONE!!!"
+            multi.playerOne?.playerView.nameLabel.text = "Slayer!!"
+            multi.playerTwo?.playerView.nameLabel.text = "Cheery Cherry!"
+            timed.playerOne?.playerView.nameLabel.text = "Tw*t!"
+            timed.playerOne?.playerView.nameLabel.text = "Moron!!!"
+        }
+        
+        
+        
         return true
     }
 

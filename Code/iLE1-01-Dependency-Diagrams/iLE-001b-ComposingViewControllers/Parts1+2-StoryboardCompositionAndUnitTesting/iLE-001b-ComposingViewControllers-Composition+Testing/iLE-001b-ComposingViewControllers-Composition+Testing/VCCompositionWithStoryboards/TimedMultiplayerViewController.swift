@@ -9,6 +9,12 @@ import UIKit
 
 final class TimedMultiplayerViewController: UIViewController {
     @IBOutlet private weak var timeBar: TimeBarViewController?
-    @IBOutlet private weak var playerOne: PlayerScoreViewController?
-    @IBOutlet private weak var playerTwo: PlayerScoreViewController?
+    
+    weak var playerOne: PlayerScoreViewController? {
+        return children.compactMap { $0 as? PlayerScoreViewController }.first
+    }
+    
+    weak var playerTwo: PlayerScoreViewController? {
+        return children.compactMap { $0 as? PlayerScoreViewController }.last
+    }
 }

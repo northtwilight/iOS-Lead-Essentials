@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +40,7 @@
                                     <constraint firstAttribute="width" constant="195" id="gTl-Yl-DgN"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="OmU-xD-QQi" kind="embed" id="p6T-9W-sgd"/>
+                                    <segue destination="OmU-xD-QQi" kind="embed" identifier="PlayerOne" id="p6T-9W-sgd"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LE1-CU-FEu">
@@ -50,7 +51,7 @@
                                     <constraint firstAttribute="height" constant="65" id="gh5-eg-Z5z"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Pvn-l6-PiS" kind="embed" id="Cnd-4j-W1P"/>
+                                    <segue destination="Pvn-l6-PiS" kind="embed" identifier="PlayerTwo" id="Cnd-4j-W1P"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRz-8n-RQc">
@@ -68,6 +69,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="nHB-Wz-VYG"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LE1-CU-FEu" firstAttribute="width" secondItem="cjf-m5-Q6D" secondAttribute="width" id="AsY-ZT-67Q"/>

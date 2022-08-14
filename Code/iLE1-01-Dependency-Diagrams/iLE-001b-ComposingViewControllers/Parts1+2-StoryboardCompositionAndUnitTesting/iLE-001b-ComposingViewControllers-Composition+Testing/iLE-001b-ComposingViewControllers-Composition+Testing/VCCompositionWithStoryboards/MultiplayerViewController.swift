@@ -8,6 +8,11 @@
 import UIKit
 
 class MultiplayerViewController: UIViewController {
-    @IBOutlet weak var playerOne: PlayerScoreViewController?
-    @IBOutlet weak var playerTwo: PlayerScoreViewController?
+    var playerOne: PlayerScoreViewController? {
+        return children.compactMap { $0 as? PlayerScoreViewController }.first
+    }
+    
+    var playerTwo: PlayerScoreViewController? {
+        return children.compactMap { $0 as? PlayerScoreViewController }.first
+    }
 }
