@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L7o-Ry-e02">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,78 +8,81 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--PlayerOne-->
-        <scene sceneID="TwM-aV-gbK">
+        <!--TimeBar-->
+        <scene sceneID="gZz-cv-PNj">
             <objects>
-                <viewControllerPlaceholder storyboardName="PlayerOne" id="wDQ-sc-6kB" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ku3-fC-IEr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="TimeBar" id="Bwn-wQ-Ep3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gyn-Sn-dFf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-54" y="-293"/>
+            <point key="canvasLocation" x="-820" y="-255"/>
         </scene>
-        <!--PlayerTwo-->
-        <scene sceneID="BwW-9p-bcb">
+        <!--MultiplayerScore-->
+        <scene sceneID="r34-Dm-1w7">
             <objects>
-                <viewControllerPlaceholder storyboardName="PlayerTwo" id="Cba-07-aqi" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l0q-cP-JEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="MultiplayerScore" id="E3K-T8-6PE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yv2-lB-LOt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="275" y="-293"/>
+            <point key="canvasLocation" x="-633" y="-214"/>
         </scene>
-        <!--Multiplayer-->
-        <scene sceneID="n0Q-0B-pn1">
+        <!--Timed Multiplayer-->
+        <scene sceneID="6De-0S-sAN">
             <objects>
-                <viewController id="nzc-6V-QnX" customClass="MultiplayerViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rdF-sI-kwR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                <viewController id="L7o-Ry-e02" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="frE-AA-PNx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zE-86-ca4">
-                                <rect key="frame" x="20" y="0.0" width="160" height="65"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5F-YQ-k3i">
+                                <rect key="frame" x="20" y="44" width="374" height="30"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="5a8-Lv-3dp"/>
+                                    <constraint firstAttribute="width" constant="374" id="gHT-PS-Jlr"/>
+                                    <constraint firstAttribute="height" constant="30" id="rya-BE-8gu"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="wDQ-sc-6kB" kind="embed" id="Mck-kC-JLG"/>
+                                    <segue destination="Bwn-wQ-Ep3" kind="embed" id="agF-yp-40H"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBZ-rk-1aR">
-                                <rect key="frame" x="234" y="0.0" width="160" height="65"/>
-                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4o-Nl-enI">
+                                <rect key="frame" x="20" y="82" width="374" height="65"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="dSG-T5-Bt1"/>
-                                    <constraint firstAttribute="height" constant="65" id="pCE-1E-TaO"/>
+                                    <constraint firstAttribute="height" constant="65" id="MRp-Dv-vZG"/>
+                                    <constraint firstAttribute="width" constant="374" id="Xj6-Lc-7ew"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Cba-07-aqi" kind="embed" id="msb-ai-MSd"/>
+                                    <segue destination="E3K-T8-6PE" kind="embed" id="wfR-gC-iQZ"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="H4t-CU-LQg"/>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yc1-B2-Bzf"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="CBZ-rk-1aR" firstAttribute="leading" secondItem="5zE-86-ca4" secondAttribute="trailing" constant="54" id="6IG-dC-taB"/>
-                            <constraint firstItem="CBZ-rk-1aR" firstAttribute="top" secondItem="rdF-sI-kwR" secondAttribute="top" id="Ml3-T0-zMb"/>
-                            <constraint firstItem="CBZ-rk-1aR" firstAttribute="top" secondItem="5zE-86-ca4" secondAttribute="top" id="W7W-eI-aFC"/>
-                            <constraint firstAttribute="top" secondItem="5zE-86-ca4" secondAttribute="top" id="fM1-Vw-4VI"/>
-                            <constraint firstItem="CBZ-rk-1aR" firstAttribute="bottom" secondItem="5zE-86-ca4" secondAttribute="bottom" id="fdx-Id-2dd"/>
-                            <constraint firstItem="5zE-86-ca4" firstAttribute="leading" secondItem="rdF-sI-kwR" secondAttribute="leading" constant="20" id="m07-Nd-nQQ"/>
-                            <constraint firstAttribute="trailing" secondItem="CBZ-rk-1aR" secondAttribute="trailing" constant="20" id="qyh-gr-sVd"/>
+                            <constraint firstItem="yc1-B2-Bzf" firstAttribute="trailing" secondItem="C4o-Nl-enI" secondAttribute="trailing" constant="20" id="5vG-vs-pxm"/>
+                            <constraint firstItem="Q5F-YQ-k3i" firstAttribute="centerX" secondItem="yc1-B2-Bzf" secondAttribute="centerX" id="GIu-zu-P2a"/>
+                            <constraint firstItem="C4o-Nl-enI" firstAttribute="leading" secondItem="yc1-B2-Bzf" secondAttribute="leading" constant="20" id="Gam-ZD-Uaf"/>
+                            <constraint firstItem="Q5F-YQ-k3i" firstAttribute="width" secondItem="C4o-Nl-enI" secondAttribute="width" id="HCl-WU-KFq"/>
+                            <constraint firstItem="C4o-Nl-enI" firstAttribute="top" secondItem="Q5F-YQ-k3i" secondAttribute="bottom" constant="8" id="SWA-ke-ZVi"/>
+                            <constraint firstItem="Q5F-YQ-k3i" firstAttribute="top" secondItem="yc1-B2-Bzf" secondAttribute="top" id="YNj-Re-QnX"/>
+                            <constraint firstItem="Q5F-YQ-k3i" firstAttribute="leading" secondItem="C4o-Nl-enI" secondAttribute="leading" id="ljI-er-oMX"/>
+                            <constraint firstItem="Q5F-YQ-k3i" firstAttribute="trailing" secondItem="C4o-Nl-enI" secondAttribute="trailing" id="vEH-yY-yem"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Multiplayer" id="3Fx-tj-KZt"/>
-                    <size key="freeformSize" width="414" height="65"/>
+                    <tabBarItem key="tabBarItem" title="Timed Multiplayer" id="F9b-la-ZQz"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="414" height="896"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mcw-du-ndF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rJJ-Qt-cDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="93" y="-213"/>
+            <point key="canvasLocation" x="-730.43478260869574" y="152.67857142857142"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

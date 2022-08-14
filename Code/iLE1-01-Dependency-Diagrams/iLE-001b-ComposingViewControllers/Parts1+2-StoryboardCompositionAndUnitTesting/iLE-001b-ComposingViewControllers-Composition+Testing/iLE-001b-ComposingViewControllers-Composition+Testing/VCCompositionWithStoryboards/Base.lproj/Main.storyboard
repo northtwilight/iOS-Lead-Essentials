@@ -16,7 +16,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pU2-Bz-GOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1753" y="272"/>
+            <point key="canvasLocation" x="-1764" y="45"/>
         </scene>
         <!--SinglePlayerGame-->
         <scene sceneID="rPu-vU-i9S">
@@ -43,10 +43,21 @@
                     <connections>
                         <segue destination="jMF-7O-PBE" kind="relationship" relationship="viewControllers" id="HW3-GR-LwA"/>
                         <segue destination="Huk-WY-PUx" kind="relationship" relationship="viewControllers" id="4ml-9x-Epk"/>
+                        <segue destination="2sC-rJ-dT0" kind="relationship" relationship="viewControllers" id="nlS-Ft-cjg"/>
                     </connections>
                 </tabBarController>
             </objects>
             <point key="canvasLocation" x="-2407" y="45"/>
+        </scene>
+        <!--TimedMultiplayerGame-->
+        <scene sceneID="gfj-q1-TLX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TimedMultiplayerGame" id="2sC-rJ-dT0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Timed Multiplayer" id="oUd-KH-uhx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0JO-af-14v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1738" y="165"/>
         </scene>
     </scenes>
     <resources>

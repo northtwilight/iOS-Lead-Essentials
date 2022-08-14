@@ -16,11 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKg-eJ-F4l">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKg-eJ-F4l">
                                 <rect key="frame" x="20" y="44" width="374" height="65"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="5sz-eS-6X9"/>
                                     <constraint firstAttribute="height" constant="65" id="fC6-03-1gh"/>
                                 </constraints>
                                 <connections>
@@ -31,6 +30,7 @@
                         <viewLayoutGuide key="safeArea" id="dnX-dL-1Iz"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="dnX-dL-1Iz" firstAttribute="trailing" secondItem="qKg-eJ-F4l" secondAttribute="trailing" constant="20" id="OhH-YK-PMU"/>
                             <constraint firstItem="dnX-dL-1Iz" firstAttribute="top" secondItem="qKg-eJ-F4l" secondAttribute="top" id="caH-tm-ypV"/>
                             <constraint firstItem="qKg-eJ-F4l" firstAttribute="leading" secondItem="dnX-dL-1Iz" secondAttribute="leading" constant="20" id="e73-t0-Otx"/>
                         </constraints>
