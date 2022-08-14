@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PlayerOne-->
+        <scene sceneID="TwM-aV-gbK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlayerOne" id="wDQ-sc-6kB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ku3-fC-IEr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-54" y="-293"/>
+        </scene>
+        <!--PlayerTwo-->
+        <scene sceneID="BwW-9p-bcb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlayerTwo" id="Cba-07-aqi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0q-cP-JEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="275" y="-293"/>
+        </scene>
+        <!--Multiplayer-->
+        <scene sceneID="n0Q-0B-pn1">
+            <objects>
+                <viewController id="nzc-6V-QnX" customClass="MultiplayerViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rdF-sI-kwR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zE-86-ca4">
+                                <rect key="frame" x="20" y="0.0" width="160" height="65"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="5a8-Lv-3dp"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="wDQ-sc-6kB" kind="embed" id="Mck-kC-JLG"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBZ-rk-1aR">
+                                <rect key="frame" x="234" y="0.0" width="160" height="65"/>
+                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="dSG-T5-Bt1"/>
+                                    <constraint firstAttribute="height" constant="65" id="pCE-1E-TaO"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="Cba-07-aqi" kind="embed" id="msb-ai-MSd"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H4t-CU-LQg"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CBZ-rk-1aR" firstAttribute="leading" secondItem="5zE-86-ca4" secondAttribute="trailing" constant="54" id="6IG-dC-taB"/>
+                            <constraint firstItem="CBZ-rk-1aR" firstAttribute="top" secondItem="rdF-sI-kwR" secondAttribute="top" id="Ml3-T0-zMb"/>
+                            <constraint firstItem="CBZ-rk-1aR" firstAttribute="top" secondItem="5zE-86-ca4" secondAttribute="top" id="W7W-eI-aFC"/>
+                            <constraint firstAttribute="top" secondItem="5zE-86-ca4" secondAttribute="top" id="fM1-Vw-4VI"/>
+                            <constraint firstItem="CBZ-rk-1aR" firstAttribute="bottom" secondItem="5zE-86-ca4" secondAttribute="bottom" id="fdx-Id-2dd"/>
+                            <constraint firstItem="5zE-86-ca4" firstAttribute="leading" secondItem="rdF-sI-kwR" secondAttribute="leading" constant="20" id="m07-Nd-nQQ"/>
+                            <constraint firstAttribute="trailing" secondItem="CBZ-rk-1aR" secondAttribute="trailing" constant="20" id="qyh-gr-sVd"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Multiplayer" id="3Fx-tj-KZt"/>
+                    <size key="freeformSize" width="414" height="65"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mcw-du-ndF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="-213"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

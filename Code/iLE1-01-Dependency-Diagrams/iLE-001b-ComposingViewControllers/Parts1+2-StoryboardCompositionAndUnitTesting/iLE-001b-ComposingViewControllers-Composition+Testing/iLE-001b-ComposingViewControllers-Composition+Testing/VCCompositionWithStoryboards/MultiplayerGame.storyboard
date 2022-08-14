@@ -8,22 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--PlayerOne-->
-        <scene sceneID="IwU-Eg-PoW">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PlayerOne" id="XYh-8B-bgY" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MV9-VZ-OVF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-54" y="-293"/>
-        </scene>
-        <!--PlayerTwo-->
-        <scene sceneID="3RN-73-8i9">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PlayerTwo" id="cFp-lW-RII" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="im9-iq-aRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="275" y="-293"/>
-        </scene>
         <!--Multiplayer-->
         <scene sceneID="2kx-aN-zQ6">
             <objects>
@@ -32,54 +16,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKg-eJ-F4l">
-                                <rect key="frame" x="20" y="44" width="160" height="65"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKg-eJ-F4l">
+                                <rect key="frame" x="20" y="44" width="374" height="65"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="5sz-eS-6X9"/>
                                     <constraint firstAttribute="height" constant="65" id="fC6-03-1gh"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="XYh-8B-bgY" kind="embed" id="d2m-7A-rvr"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvh-Bt-6UX">
-                                <rect key="frame" x="234" y="44" width="160" height="65"/>
-                                <color key="backgroundColor" systemColor="systemMintColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="7XU-Iy-sks"/>
-                                    <constraint firstAttribute="height" constant="65" id="iBI-OH-Akh"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="cFp-lW-RII" kind="embed" id="UXr-26-ubw"/>
+                                    <segue destination="WIN-1l-Qz6" kind="embed" id="wGb-R0-tVG"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dnX-dL-1Iz"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qvh-Bt-6UX" firstAttribute="top" secondItem="qKg-eJ-F4l" secondAttribute="top" id="1Ws-7w-gFy"/>
-                            <constraint firstItem="dnX-dL-1Iz" firstAttribute="trailing" secondItem="qvh-Bt-6UX" secondAttribute="trailing" constant="20" id="D0e-93-6AZ"/>
-                            <constraint firstItem="qvh-Bt-6UX" firstAttribute="top" secondItem="dnX-dL-1Iz" secondAttribute="top" id="NCQ-el-ASq"/>
                             <constraint firstItem="dnX-dL-1Iz" firstAttribute="top" secondItem="qKg-eJ-F4l" secondAttribute="top" id="caH-tm-ypV"/>
                             <constraint firstItem="qKg-eJ-F4l" firstAttribute="leading" secondItem="dnX-dL-1Iz" secondAttribute="leading" constant="20" id="e73-t0-Otx"/>
-                            <constraint firstItem="qvh-Bt-6UX" firstAttribute="leading" secondItem="qKg-eJ-F4l" secondAttribute="trailing" constant="54" id="idY-9G-AIy"/>
-                            <constraint firstItem="qvh-Bt-6UX" firstAttribute="bottom" secondItem="qKg-eJ-F4l" secondAttribute="bottom" id="q8F-DK-UIx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Multiplayer" id="9IY-D1-Gsd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="414" height="896"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHc-iI-OrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="92.753623188405811" y="92.410714285714278"/>
         </scene>
+        <!--MultiplayerScore-->
+        <scene sceneID="ory-eN-Xg5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MultiplayerScore" id="WIN-1l-Qz6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grz-dm-7Gh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109" y="-291"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
