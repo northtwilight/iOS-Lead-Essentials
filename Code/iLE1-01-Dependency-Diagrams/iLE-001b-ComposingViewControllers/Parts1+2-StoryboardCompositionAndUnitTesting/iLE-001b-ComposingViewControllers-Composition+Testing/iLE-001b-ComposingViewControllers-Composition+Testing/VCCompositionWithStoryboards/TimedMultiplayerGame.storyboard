@@ -27,7 +27,7 @@
         <!--Timed Multiplayer-->
         <scene sceneID="6De-0S-sAN">
             <objects>
-                <viewController id="L7o-Ry-e02" sceneMemberID="viewController">
+                <viewController id="L7o-Ry-e02" customClass="TimedMultiplayerViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="frE-AA-PNx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
