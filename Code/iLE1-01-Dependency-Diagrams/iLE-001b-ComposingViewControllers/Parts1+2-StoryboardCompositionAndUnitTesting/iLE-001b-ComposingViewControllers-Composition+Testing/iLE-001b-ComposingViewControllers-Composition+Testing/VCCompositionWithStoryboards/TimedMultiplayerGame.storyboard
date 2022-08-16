@@ -40,7 +40,7 @@
                                     <constraint firstAttribute="height" constant="30" id="rya-BE-8gu"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Bwn-wQ-Ep3" kind="embed" id="agF-yp-40H"/>
+                                    <segue destination="Bwn-wQ-Ep3" kind="embed" identifier="TimeBar" id="agF-yp-40H"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4o-Nl-enI">
@@ -51,7 +51,7 @@
                                     <constraint firstAttribute="width" constant="374" id="Xj6-Lc-7ew"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="E3K-T8-6PE" kind="embed" id="wfR-gC-iQZ"/>
+                                    <segue destination="E3K-T8-6PE" kind="embed" identifier="Players" id="wfR-gC-iQZ"/>
                                 </connections>
                             </containerView>
                         </subviews>

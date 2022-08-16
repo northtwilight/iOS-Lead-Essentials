@@ -9,9 +9,9 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        var window: UIWindow?
-        
         if let views = (window?.rootViewController as? UITabBarController)?.viewControllers,
            let single = views[0] as? SinglePlayerViewController,
            let multi = views[1] as? MultiplayerViewController,
@@ -22,14 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             _ = timed.view
             
             single.playerOne?.playerView.nameLabel.text = "TestONE!!!"
-            multi.playerOne?.playerView.nameLabel.text = "Slayer!!"
-            multi.playerTwo?.playerView.nameLabel.text = "Cheery Cherry!"
-            timed.playerOne?.playerView.nameLabel.text = "Tw*t!"
-            timed.playerOne?.playerView.nameLabel.text = "Moron!!!"
+            multi.players?.playerOne?.playerView.nameLabel.text = "Slayer!!"
+            multi.players?.playerTwo?.playerView.nameLabel.text = "Cheery Cherry!"
+            timed.players?.playerOne?.playerView.nameLabel.text = "Tree-hugger!"
+            timed.players?.playerTwo?.playerView.nameLabel.text = "Duane"
         }
-        
-        
-        
         return true
     }
 
@@ -46,7 +43,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 

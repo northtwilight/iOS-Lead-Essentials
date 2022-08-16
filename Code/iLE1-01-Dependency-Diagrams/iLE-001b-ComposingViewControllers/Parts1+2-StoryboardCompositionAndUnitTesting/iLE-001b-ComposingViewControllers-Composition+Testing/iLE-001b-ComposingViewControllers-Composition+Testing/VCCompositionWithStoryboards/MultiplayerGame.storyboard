@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="height" constant="65" id="fC6-03-1gh"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="WIN-1l-Qz6" kind="embed" id="wGb-R0-tVG"/>
+                                    <segue destination="WIN-1l-Qz6" kind="embed" identifier="Players" id="wGb-R0-tVG"/>
                                 </connections>
                             </containerView>
                         </subviews>

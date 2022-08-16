@@ -15,13 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5uU-zT-Ytl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uU-zT-Ytl">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="tintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mEI-80-0d2"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5uU-zT-Ytl" secondAttribute="trailing" id="6EX-Bf-bBW"/>
+                            <constraint firstItem="5uU-zT-Ytl" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Sbc-fT-GyR"/>
+                            <constraint firstAttribute="top" secondItem="5uU-zT-Ytl" secondAttribute="top" id="smP-8i-7bc"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="30"/>
