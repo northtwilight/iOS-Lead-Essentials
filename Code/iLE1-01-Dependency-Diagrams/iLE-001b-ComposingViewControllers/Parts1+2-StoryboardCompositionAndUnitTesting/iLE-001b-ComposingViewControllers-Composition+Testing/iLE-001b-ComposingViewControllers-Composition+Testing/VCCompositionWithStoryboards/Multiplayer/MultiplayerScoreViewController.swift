@@ -20,12 +20,4 @@ final class MultiplayerScoreViewController: UIViewController {
     var playerTwo: PlayerScoreViewController? {
         return children.compactMap { $0 as? PlayerScoreViewController }.last
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == Constants.playerOne, let vc = segue.destination as? PlayerScoreViewController {
-//            playerOne = vc
-//        } else if segue.identifier == Constants.playerTwo , let vc = segue.destination as? PlayerScoreViewController {
-//            playerTwo = vc
-//        }
-//    }
 }
