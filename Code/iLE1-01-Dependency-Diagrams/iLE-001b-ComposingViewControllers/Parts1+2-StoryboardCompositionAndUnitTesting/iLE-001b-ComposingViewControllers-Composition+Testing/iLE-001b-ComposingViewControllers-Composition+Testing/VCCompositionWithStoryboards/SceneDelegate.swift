@@ -8,15 +8,43 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let _ = (scene as? UIWindowScene),
+              let window = window else { return }
+
+        window.makeKeyAndVisible()
+        guard let rootTabBarViewController = window.rootViewController as? UITabBarController else {
+            print("Cannot set root view controller as tab bar controller")
+            return
+        }
+
+        guard let views = rootTabBarViewController.viewControllers,
+              let single = views[0] as? SinglePlayerViewController,
+              let multi = views[1] as? MultiplayerViewController,
+              let timed = views[2] as? TimedMultiplayerViewController
+        else {
+            print("can't set view controllers correctly")
+            return
+        }
+
+        _ = single.view
+        _ = multi.view
+        _ = timed.view
+
+        single.player?.name = "Generic Test"
+        
+        multi.players?.playerOne?.name = "Test 1"
+        multi.players?.playerTwo?.name = "Test 2"
+        
+        timed.players?.playerOne?.name = "Test 3"
+        timed.players?.playerTwo?.name = "Test 4"
+        
+        timed.timeBar?.barView?.backgroundColor = UIColor.systemRed
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

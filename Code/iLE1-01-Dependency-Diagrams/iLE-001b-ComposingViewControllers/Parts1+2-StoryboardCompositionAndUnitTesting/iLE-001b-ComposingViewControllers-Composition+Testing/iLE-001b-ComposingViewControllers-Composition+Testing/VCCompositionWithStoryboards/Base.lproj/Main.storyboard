@@ -10,7 +10,7 @@
         <scene sceneID="X8j-UL-4bg">
             <objects>
                 <viewControllerPlaceholder storyboardName="MultiplayerGame" id="Huk-WY-PUx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Multiplayer" image=" " id="TNc-9A-ucE">
+                    <tabBarItem key="tabBarItem" title="Multiplayer" image="square.and.arrow.up" catalog="system" id="TNc-9A-ucE">
                         <color key="badgeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -22,7 +22,7 @@
         <scene sceneID="rPu-vU-i9S">
             <objects>
                 <viewControllerPlaceholder storyboardName="SinglePlayerGame" id="jMF-7O-PBE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Single Player" id="qmG-h1-zD5">
+                    <tabBarItem key="tabBarItem" title="Single Player" image="square.and.arrow.up.circle.fill" catalog="system" id="qmG-h1-zD5">
                         <color key="badgeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -33,7 +33,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="HRx-IA-edh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LOg-8l-Cd9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="shq-JQ-AS2" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UJy-B6-z4t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -46,6 +45,7 @@
                         <segue destination="2sC-rJ-dT0" kind="relationship" relationship="viewControllers" id="nlS-Ft-cjg"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LOg-8l-Cd9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2407" y="45"/>
         </scene>
@@ -53,7 +53,7 @@
         <scene sceneID="gfj-q1-TLX">
             <objects>
                 <viewControllerPlaceholder storyboardName="TimedMultiplayerGame" id="2sC-rJ-dT0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Timed Multiplayer" id="oUd-KH-uhx"/>
+                    <tabBarItem key="tabBarItem" title="Timed Multiplayer" image="pencil.circle" catalog="system" id="oUd-KH-uhx"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0JO-af-14v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,6 +61,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name=" " width="128" height="128"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>

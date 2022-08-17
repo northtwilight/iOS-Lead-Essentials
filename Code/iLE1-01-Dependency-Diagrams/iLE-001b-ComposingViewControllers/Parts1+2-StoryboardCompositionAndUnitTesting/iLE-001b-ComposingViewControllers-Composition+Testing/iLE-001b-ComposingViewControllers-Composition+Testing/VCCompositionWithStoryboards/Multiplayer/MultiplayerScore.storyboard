@@ -27,7 +27,7 @@
         <!--Multiplayer-->
         <scene sceneID="TwB-OT-f52">
             <objects>
-                <viewController id="DuG-Tk-AJd" customClass="MultiplayerViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DuG-Tk-AJd" customClass="MultiplayerScoreViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tof-eO-Fwm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

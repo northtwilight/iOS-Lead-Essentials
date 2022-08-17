@@ -1,5 +1,5 @@
 //
-//  PlayerView.swift
+//  PlayerScoreViewController.swift
 //  iLE-001b-ComposingViewControllers-Composition+Testing
 //
 //  Created by Massimo Savino on 2022-08-11.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PlayerView: UIView {
+final class PlayerScoreViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     

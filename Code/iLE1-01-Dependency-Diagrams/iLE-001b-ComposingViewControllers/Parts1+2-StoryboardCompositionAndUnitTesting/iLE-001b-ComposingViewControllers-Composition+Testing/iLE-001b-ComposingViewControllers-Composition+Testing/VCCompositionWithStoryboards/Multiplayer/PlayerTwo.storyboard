@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rQN-S9-Nu3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Player Score View Controller-->
+        <scene sceneID="Wi1-ee-XXl">
+            <objects>
+                <viewController id="rQN-S9-Nu3" customClass="PlayerScoreViewController" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bLp-fO-baV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Taylor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43c-R3-y8J">
+                                <rect key="frame" x="360" y="8" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3,240" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbD-OI-UIG">
+                                <rect key="frame" x="361.5" y="40" width="44.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="MbD-OI-UIG" firstAttribute="top" secondItem="43c-R3-y8J" secondAttribute="bottom" constant="11" id="DnP-Lo-6Xu"/>
+                            <constraint firstAttribute="bottom" secondItem="MbD-OI-UIG" secondAttribute="bottom" constant="8" id="J1O-Nq-bbp"/>
+                            <constraint firstAttribute="trailing" secondItem="43c-R3-y8J" secondAttribute="trailing" constant="8" id="KZy-2a-aZN"/>
+                            <constraint firstItem="43c-R3-y8J" firstAttribute="top" secondItem="bLp-fO-baV" secondAttribute="top" constant="8" id="MKD-WN-ZFW"/>
+                            <constraint firstAttribute="trailing" secondItem="MbD-OI-UIG" secondAttribute="trailing" constant="8" id="Noh-PG-T7D"/>
+                            <constraint firstItem="MbD-OI-UIG" firstAttribute="trailing" secondItem="43c-R3-y8J" secondAttribute="trailing" id="mZY-gw-nfF"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="65"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="43c-R3-y8J" id="Cj6-gc-V0r"/>
+                        <outlet property="scoreLabel" destination="MbD-OI-UIG" id="rdb-i4-HPV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9X-x2-QG8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-478.26086956521743" y="43.861607142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -8,25 +8,8 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
-    
+class AppDelegate: UIResponder, UIApplicationDelegate {    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if let views = (window?.rootViewController as? UITabBarController)?.viewControllers,
-           let single = views[0] as? SinglePlayerViewController,
-           let multi = views[1] as? MultiplayerViewController,
-           let timed = views[2] as? TimedMultiplayerViewController {
-            
-            _ = single.view
-            _ = multi.view
-            _ = timed.view
-            
-            single.playerOne?.playerView.nameLabel.text = "TestONE!!!"
-            multi.players?.playerOne?.playerView.nameLabel.text = "Slayer!!"
-            multi.players?.playerTwo?.playerView.nameLabel.text = "Cheery Cherry!"
-            timed.players?.playerOne?.playerView.nameLabel.text = "Tree-hugger!"
-            timed.players?.playerTwo?.playerView.nameLabel.text = "Duane"
-        }
         return true
     }
 

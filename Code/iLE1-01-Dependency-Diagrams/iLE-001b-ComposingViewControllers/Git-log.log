@@ -1,0 +1,42 @@
+Git log this repo:
+==================
+
+- Tue 16 August 2022
+
+cyclone@Massimos-MBP iOS-Lead-Essentials % git log --oneline
+da13b39 (HEAD -> module1, origin/module1) iLE-001b Set up LFS for png, jpg, mp3, mp4, mov, avi, mkv
+737ca25 iLE-001b Finally. Solved testing code in SceneDelegate appearance
+ff0ee9c iLE-001b More WIP cleanup
+8f21824 iLE-001b some work on ID'ing why the test code won't work, not resolved fully but can say the playerView on the single player code at least needs some work, as a start
+fb2061b iLE-001b more refactoring
+3627a31 iLE-001b Added MultiplayerScoreViewController
+7163617 (origin/develop, develop) iLE-001b Updated TimedMultiplayerGame storyboard to use the new view controller
+dfc3579 iLE-001b Added TimeBar storyboard and TimeBarViewController
+8c7532c iLE-001b More cleanup work. Beginnings of MultiplayerGame.storyboard (in previous commit)
+db77efe iLE-001b Fixed tab layouts. Fixed multiplayer layout, sorted out proper composition of multiplayer. Next steps working out the timed multiplayer game
+26c0349 iLE-001b Most of the initial refactoring for the first video
+11db65b iLE-001b More updates but layout an issue with both basic view controllers
+ab3b0d2 iLE-001b more WIP, more abstractions
+738c971 iLE-001b WIP, probably won't build
+195e070 iLE-001b Added PlayerOne, PlayerTwo and SinglePlayerGame storyboards. Added PlayerScoreViewController
+13971ae iLE-001b Moved files. Added PlayerView abstracted container for the reusable views containing a nameLabel and scoreLabel. About to add PlayerOne storyboard and PlayerTwo storyboard
+09b5655 iLE-001b Added multiplayer view controller in storyboard and code, will refactor soon (deliberate mistake to illustrate the work)
+401414e iLE-001b Second commit - mistaken dead end - duplicated view controller, about to refactor it to a Single player view controller
+15c83a2 iLE-001b Initial commit for Composing View Controllers, Part I: first view controller, without class implementation still, just storyboard alone
+fad5873 (origin/main, origin/HEAD, main) iLE-000 Decided to just stick to protocol style for now.
+7f05201 iLE-001 Intro to Dependency Diagrams Initial Commit
+603f2c0 iLE-000 Never-ending saga of git ignore BS
+eaa4941 iLE-000 More ApiClient and company revisions
+d267b8f iLE-000 Updates to ApiClient.swift
+7abb968 Second abstraction level? Also added simple-minded logPrint
+a8b03ed iLE-000 Fixed gitignore maybe?
+aa92e52 Bloody hidden files
+9b50fbd Plumbing again
+23c54d6 iLE-000 Plumbing update
+45f21b6 iLE-000 Partially separated out ApiClient functions, needs work...
+42ada4f iLE-000 Initial branch commit. Added projects to git (rebased)
+4d52355 Update README.md
+5d449a2 Initial commit
+cyclone@Massimos-MBP iOS-Lead-Essentials % 
+
+
