@@ -15,32 +15,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Mickey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd1-Fs-uEL">
-                                <rect key="frame" x="8" y="8" width="54" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemYellowColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yad-dE-hEk">
-                                <rect key="frame" x="8" y="40" width="45" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemOrangeColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqe-Of-JrN" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Mickey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNI-H5-rNZ">
+                                        <rect key="frame" x="8" y="8" width="54" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNQ-4L-EcK">
+                                        <rect key="frame" x="8" y="36.5" width="45" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemOrangeColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstItem="NNI-H5-rNZ" firstAttribute="top" secondItem="eqe-Of-JrN" secondAttribute="top" constant="8" id="1qZ-yM-MDn"/>
+                                    <constraint firstAttribute="bottom" secondItem="UNQ-4L-EcK" secondAttribute="bottom" constant="8" id="LLw-fs-Hzo"/>
+                                    <constraint firstItem="NNI-H5-rNZ" firstAttribute="leading" secondItem="eqe-Of-JrN" secondAttribute="leading" constant="8" id="TCs-Vm-p7A"/>
+                                    <constraint firstItem="UNQ-4L-EcK" firstAttribute="leading" secondItem="eqe-Of-JrN" secondAttribute="leading" constant="8" id="TZX-zx-c19"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="nameLabel" destination="NNI-H5-rNZ" id="LcY-33-8UC"/>
+                                    <outlet property="scoreLabel" destination="UNQ-4L-EcK" id="aa9-i3-ufG"/>
+                                </connections>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
-                            <constraint firstItem="yad-dE-hEk" firstAttribute="leading" secondItem="Dd1-Fs-uEL" secondAttribute="leading" id="9hR-s5-Vrg"/>
-                            <constraint firstItem="yad-dE-hEk" firstAttribute="top" secondItem="Dd1-Fs-uEL" secondAttribute="bottom" constant="11" id="Qhy-rC-KNg"/>
-                            <constraint firstAttribute="bottom" secondItem="yad-dE-hEk" secondAttribute="bottom" constant="8" id="nYE-Ny-Fe7"/>
-                            <constraint firstItem="Dd1-Fs-uEL" firstAttribute="leading" secondItem="p6K-EH-gG5" secondAttribute="leading" constant="8" id="woD-k8-mew"/>
-                            <constraint firstItem="Dd1-Fs-uEL" firstAttribute="top" secondItem="p6K-EH-gG5" secondAttribute="top" constant="8" id="yxx-lA-Bah"/>
+                            <constraint firstAttribute="top" secondItem="eqe-Of-JrN" secondAttribute="top" id="PmA-Aa-X1K"/>
+                            <constraint firstItem="eqe-Of-JrN" firstAttribute="leading" secondItem="p6K-EH-gG5" secondAttribute="leading" id="okG-bQ-1bK"/>
+                            <constraint firstAttribute="bottom" secondItem="eqe-Of-JrN" secondAttribute="bottom" id="tNr-9h-GFj"/>
+                            <constraint firstAttribute="trailing" secondItem="eqe-Of-JrN" secondAttribute="trailing" id="zkF-AI-cOK"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="65"/>
                     <connections>
-                        <outlet property="nameLabel" destination="Dd1-Fs-uEL" id="kq5-aX-66l"/>
-                        <outlet property="scoreLabel" destination="yad-dE-hEk" id="Edx-yA-c1E"/>
+                        <outlet property="playerView" destination="eqe-Of-JrN" id="gVu-O7-Yrm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjp-fW-Ulz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

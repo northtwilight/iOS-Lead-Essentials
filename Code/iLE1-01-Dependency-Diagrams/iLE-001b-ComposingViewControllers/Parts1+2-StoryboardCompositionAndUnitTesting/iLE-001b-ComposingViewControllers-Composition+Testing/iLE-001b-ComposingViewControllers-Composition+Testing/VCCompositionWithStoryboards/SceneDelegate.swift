@@ -36,13 +36,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         _ = multi.view
         _ = timed.view
 
-        single.player?.name = "Generic Test"
+        single.player?.playerView?.name = "Generic Test"
         
-        multi.players?.playerOne?.name = "Test 1"
-        multi.players?.playerTwo?.name = "Test 2"
+        multi.players?.playerOne?.playerView?.name = "Test 1"
+        multi.players?.playerTwo?.playerView?.name = "Test 2"
         
-        timed.players?.playerOne?.name = "Test 3"
-        timed.players?.playerTwo?.name = "Test 4"
+        timed.players?.playerOne?.playerView?.name = "Test 3"
+        timed.players?.playerTwo?.playerView?.name = "Test 4"
         
         timed.timeBar?.barView?.backgroundColor = UIColor.systemRed
     }

@@ -15,33 +15,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Taylor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43c-R3-y8J">
-                                <rect key="frame" x="360" y="8" width="46" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemYellowColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3,240" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbD-OI-UIG">
-                                <rect key="frame" x="361.5" y="40" width="44.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemOrangeColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqD-wU-0lw" customClass="PlayerView" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3,240" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbD-OI-UIG">
+                                        <rect key="frame" x="361.5" y="33.5" width="44.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemOrangeColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Taylor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43c-R3-y8J">
+                                        <rect key="frame" x="360" y="4" width="46" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="tintColor"/>
+                                <constraints>
+                                    <constraint firstItem="43c-R3-y8J" firstAttribute="trailing" secondItem="kqD-wU-0lw" secondAttribute="trailing" constant="-8" id="9MI-yV-z12"/>
+                                    <constraint firstItem="43c-R3-y8J" firstAttribute="top" secondItem="kqD-wU-0lw" secondAttribute="top" constant="4" id="F5b-R2-3Rn"/>
+                                    <constraint firstAttribute="bottom" secondItem="MbD-OI-UIG" secondAttribute="bottom" constant="11" id="gzb-B9-aGF"/>
+                                    <constraint firstItem="MbD-OI-UIG" firstAttribute="trailing" secondItem="kqD-wU-0lw" secondAttribute="trailing" constant="-8" id="xQw-s6-wOT"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="nameLabel" destination="43c-R3-y8J" id="pEZ-4a-f4g"/>
+                                    <outlet property="scoreLabel" destination="MbD-OI-UIG" id="fqH-1t-94C"/>
+                                </connections>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
-                            <constraint firstItem="MbD-OI-UIG" firstAttribute="top" secondItem="43c-R3-y8J" secondAttribute="bottom" constant="11" id="DnP-Lo-6Xu"/>
-                            <constraint firstAttribute="bottom" secondItem="MbD-OI-UIG" secondAttribute="bottom" constant="8" id="J1O-Nq-bbp"/>
-                            <constraint firstAttribute="trailing" secondItem="43c-R3-y8J" secondAttribute="trailing" constant="8" id="KZy-2a-aZN"/>
-                            <constraint firstItem="43c-R3-y8J" firstAttribute="top" secondItem="bLp-fO-baV" secondAttribute="top" constant="8" id="MKD-WN-ZFW"/>
-                            <constraint firstAttribute="trailing" secondItem="MbD-OI-UIG" secondAttribute="trailing" constant="8" id="Noh-PG-T7D"/>
-                            <constraint firstItem="MbD-OI-UIG" firstAttribute="trailing" secondItem="43c-R3-y8J" secondAttribute="trailing" id="mZY-gw-nfF"/>
+                            <constraint firstAttribute="bottom" secondItem="kqD-wU-0lw" secondAttribute="bottom" id="YPP-tx-32U"/>
+                            <constraint firstAttribute="top" secondItem="kqD-wU-0lw" secondAttribute="top" id="Yiz-yl-RuJ"/>
+                            <constraint firstAttribute="trailing" secondItem="kqD-wU-0lw" secondAttribute="trailing" id="eGH-eF-UhN"/>
+                            <constraint firstAttribute="leading" secondItem="kqD-wU-0lw" secondAttribute="leading" id="sKf-oy-hK1"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="65"/>
                     <connections>
-                        <outlet property="nameLabel" destination="43c-R3-y8J" id="Cj6-gc-V0r"/>
-                        <outlet property="scoreLabel" destination="MbD-OI-UIG" id="rdb-i4-HPV"/>
+                        <outlet property="playerView" destination="kqD-wU-0lw" id="cJB-ep-SAR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9X-x2-QG8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -50,14 +62,14 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
