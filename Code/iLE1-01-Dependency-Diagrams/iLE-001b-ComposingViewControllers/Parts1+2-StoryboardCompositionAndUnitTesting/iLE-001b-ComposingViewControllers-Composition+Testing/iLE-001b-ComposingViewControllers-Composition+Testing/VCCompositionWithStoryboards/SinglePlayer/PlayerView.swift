@@ -8,8 +8,8 @@
 import UIKit
 
 class PlayerView: UIView {
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet private(set) weak var nameLabel: UILabel!
+    @IBOutlet private(set) weak var scoreLabel: UILabel!
     
     var name: String? {
         set { nameLabel?.text = newValue }
