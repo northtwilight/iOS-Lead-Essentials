@@ -14,6 +14,11 @@
                     <size key="freeformSize" width="414" height="896"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EdT-4H-X39" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Wpx-wM-zw5" customClass="SinglePlayerViewControllerStoryboardConfigurator" customModule="iLE_001b_ComposingViewControllers_Composition_Testing" customModuleProvider="target">
+                    <connections>
+                        <outlet property="player" destination="n2s-2o-1bs" id="1C8-Hg-Dlq"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="138" y="-232"/>
         </scene>
@@ -31,7 +36,7 @@
                                     <constraint firstAttribute="height" constant="65" id="q7k-Qe-dC9"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="n2s-2o-1bs" kind="embed" id="tsJ-uN-zW7"/>
+                                    <segue destination="n2s-2o-1bs" kind="embed" identifier="SinglePlayer" id="tsJ-uN-zW7"/>
                                 </connections>
                             </containerView>
                         </subviews>
