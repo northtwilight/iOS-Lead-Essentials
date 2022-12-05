@@ -16,7 +16,7 @@ class RemoteWithLocalFallbackFeedLoader: FeedLoader {
         self.local = local
     }
     
-    func loadFeed(completion:  @escaping ([String]) -> Void) {
+    func loadFeed(completion:  @escaping (LoadFeedResult) -> Void) {
         let load = Reachability.networkAvailable ? remote.loadFeed : local.loadFeed
         load(completion)
         
