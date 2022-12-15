@@ -9,16 +9,18 @@ import XCTest
 import MyEssentialFeed
 
 private class HTTPClientSpy: HTTPClient {
-    var capturedURLs = [URL]()
-    var completions = [(Error) -> Void]()
+    var requestedURLs: [URL] {
+        return messages.map( { $0.url })
+    }
+    
+    private var messages = [(url: URL, completion: (Error) -> Void)]()
      
     func get(from url: URL, completion: @escaping (Error) -> Void) {
-        completions.append(completion)
-        capturedURLs.append(url)
+        messages.append((url, completion))
     }
     
     func complete(with error: Error, at index: Int = 0) {
-        completions[index](error)
+        messages[index].completion(error)
     }
 }
 
@@ -41,7 +43,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         let url = URL(string: "https://a.url.com")!
         let (_, client) = makeSUT(url: url)
         
-        XCTAssertTrue(client.capturedURLs.isEmpty)
+        XCTAssertTrue(client.requestedURLs.isEmpty)
     }
 
     func test_load_requestsDataFromURL() {
@@ -54,7 +56,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         
         // Assert: Then we assert that a URL request was initiated in the client)
         // (as the load method calls the protocol's required get method with a request)
-        XCTAssertEqual(client.capturedURLs, [url])
+        XCTAssertEqual(client.requestedURLs, [url])
     }
     
     func test_loadTwice_requestsDataFromURLTwice() {
@@ -66,12 +68,8 @@ final class RemoteFeedLoaderTests: XCTestCase {
         sut.load()
         sut.load()
         
-        // Assert: Then we assert that a URL request was initiated in the client)
-        // (as the load method calls the protocol's required get method with a request)
-        
-        // What if we capture the called URLs into an array? This way, we can assert order, and equality,
-        // in addition to the count. We do this by adding an empty array of capture URLs as a property
-        XCTAssertEqual(client.capturedURLs, [url, url])
+        // Assert: Then we assert that an array of URL requests was initiated in the client)
+        XCTAssertEqual(client.requestedURLs, [url, url])
     }
     
     func test_load_deliversErrorOnClientError() {
