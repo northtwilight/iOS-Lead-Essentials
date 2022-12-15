@@ -64,11 +64,13 @@ final class RemoteFeedLoaderTests: XCTestCase {
         let url = URL(string: "https://a-given-URL.com")!
         let (sut, client) = makeSUT(url: url)
         
-        // Act: When we invoke sut.load,
+        // Act: Call load twice
         sut.load { _ in }
         sut.load { _ in }
         
-        // Assert: Then we assert that an array of URL requests was initiated in the client)
+        // Assert: Then we assert that a URL requests array came from the client
+        //         where a) 2 URLs came in, b) the elements were equal to each other
+        //         and we really should test the order in which they arrived
         XCTAssertEqual(client.requestedURLs, [url, url])
     }
     
