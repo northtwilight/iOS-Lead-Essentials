@@ -6,14 +6,16 @@
 //
 
 import XCTest
-@testable import MyEssentialFeed
+import MyEssentialFeed
 
-// Moved test logic to a separate test type, the HTTP client spy
 private class HTTPClientSpy: HTTPClient {
-    var requestedURL: URL?
-    
+    // Captured URLs
+    // Additional bonus: Doing it this way as an array property separate from the original tests means
+    // we're just adding to our existing tests, it won't require refactoring those original tests.
+    var capturedURLs = [URL]()
+     
     func get(from url: URL) {
-        requestedURL = url
+        capturedURLs.append(url)
     }
 }
 
@@ -34,25 +36,39 @@ final class RemoteFeedLoaderTests: XCTestCase {
     
     func test_init_doesNotRequestDataFromURL() {
         let url = URL(string: "https://a.url.com")!
-        let client = HTTPClientSpy()
-        makeSUT(url: url)
+        let (_, client) = makeSUT(url: url)
         
-        // We assert that we didn't make a URL request, since that should only happen when `.load()` is invoked.
-        XCTAssertNil(client.requestedURL)
+        XCTAssertTrue(client.capturedURLs.isEmpty)
     }
 
-    func test_load_requestDataFromURL() {
+    func test_load_requestsDataFromURL() {
         // Arrange: Given a client and sut
         let url = URL(string: "https://a-given-URL.com")!
         let (sut, client) = makeSUT(url: url)
         
-        
         // Act: When we invoke sut.load,
         sut.load()
         
-        // Assert
-        // Then we assert that a URL request was initiated in the client)
-        XCTAssertNotNil(client.requestedURL)
+        // Assert: Then we assert that a URL request was initiated in the client)
+        // (as the load method calls the protocol's required get method with a request)
+        XCTAssertEqual(client.capturedURLs, [url])
+    }
+    
+    func test_loadTwice_requestsDataFromURLTwice() {
+        // Arrange: Given a client and sut
+        let url = URL(string: "https://a-given-URL.com")!
+        let (sut, client) = makeSUT(url: url)
+        
+        // Act: When we invoke sut.load,
+        sut.load()
+        sut.load()
+        
+        // Assert: Then we assert that a URL request was initiated in the client)
+        // (as the load method calls the protocol's required get method with a request)
+        
+        // What if we capture the called URLs into an array? This way, we can assert order, and equality,
+        // in addition to the count. We do this by adding an empty array of capture URLs as a property
+        XCTAssertEqual(client.capturedURLs, [url, url])
     }
     
 }
