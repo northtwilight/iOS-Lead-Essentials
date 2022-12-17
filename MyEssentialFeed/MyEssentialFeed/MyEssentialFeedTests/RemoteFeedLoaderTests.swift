@@ -13,9 +13,9 @@ private class HTTPClientSpy: HTTPClient {
         return messages.map( { $0.url })
     }
     
-    private var messages = [(url: URL, completion: (HTTPClientResult) -> Void)]()
+    private var messages = [(url: URL, completion: (Result<HTTPURLResponse, Error>) -> Void)]()
      
-    func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
+    func get(from url: URL, completion: @escaping (Result<HTTPURLResponse, Error>) -> Void) {
         messages.append((url, completion))
     }
     
