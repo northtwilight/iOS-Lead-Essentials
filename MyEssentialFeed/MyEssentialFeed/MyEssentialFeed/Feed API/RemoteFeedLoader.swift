@@ -23,7 +23,7 @@ public final class RemoteFeedLoader {
         case noURLResponse
     }
     
-    enum Result {
+    public enum Result: Equatable {
         case success([FeedItem])
         case failure(Error)
     }
