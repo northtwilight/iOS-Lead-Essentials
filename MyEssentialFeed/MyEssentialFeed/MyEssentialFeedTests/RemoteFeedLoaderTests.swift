@@ -34,12 +34,19 @@ private class HTTPClientSpy: HTTPClient {
             url: requestedURLs[index],
             statusCode: code,
             httpVersion: nil,
-            headerFields: nil)!
-            messages[index].completion(.success((data, response)))
+            headerFields: nil
+        )!
+        messages[index].completion(.success((data, response)))
     }
 }
 
 final class RemoteFeedLoaderTests: XCTestCase {
+    private struct Constants {
+        static let aUrl = "https://a-url.com"
+        static let aDotUrl = "https://a.url.com"
+        static let aGivenUrl = "https://a-given-URL.com"
+    }
+    
     override func setUp() {
         super.setUp()
     }
@@ -48,14 +55,28 @@ final class RemoteFeedLoaderTests: XCTestCase {
         super.tearDown()
     }
     
-    private func makeSUT(url: URL = URL(string: "https://a-url.com")!) -> (sut: RemoteFeedLoader, client: HTTPClientSpy) {
+    // MARK: - Helpers
+    
+    private func makeSUT(url: URL = URL(string: Constants.aUrl)!) -> (sut: RemoteFeedLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let sut = RemoteFeedLoader(url: url, client: client)
         return (sut, client)
     }
     
+    private func expect(
+        _ sut: RemoteFeedLoader,
+        toCompleteWithError error: RemoteFeedLoader.Error,
+        when action: () -> Void) {
+            var capturedErrors = [RemoteFeedLoader.Error]()
+            sut.load { capturedErrors.append($0)  }
+            
+            action()
+            
+            XCTAssertEqual(capturedErrors, [error])
+        }
+    
     func test_init_doesNotRequestDataFromURL() {
-        let url = URL(string: "https://a.url.com")!
+        let url = URL(string: Constants.aDotUrl)!
         let (_, client) = makeSUT(url: url)
         
         XCTAssertTrue(client.requestedURLs.isEmpty)
@@ -63,7 +84,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
 
     func test_load_requestsDataFromURL() {
         // Arrange: Given a client and sut
-        let url = URL(string: "https://a-given-URL.com")!
+        let url = URL(string: Constants.aGivenUrl)!
         let (sut, client) = makeSUT(url: url)
         
         // Act: When we invoke sut.load,
@@ -75,7 +96,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
     
     func test_loadTwice_requestsDataFromURLTwice() {
         // Arrange: Given a client and sut
-        let url = URL(string: "https://a-given-URL.com")!
+        let url = URL(string: Constants.aGivenUrl)!
         let (sut, client) = makeSUT(url: url)
         
         // Act: Call load twice
@@ -116,14 +137,13 @@ final class RemoteFeedLoaderTests: XCTestCase {
     func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() {
         let (sut, client) = makeSUT()
         
-        var capturedErrors = [RemoteFeedLoader.Error]()
-        sut.load { capturedErrors.append($0)  }
-        
-        let invalidJSON = Data("invalidJSON".utf8)
-        
-        client.complete(withStatusCode: 200, data: invalidJSON)
-        
-        XCTAssertEqual(capturedErrors, [.invalidData])
+        expect(
+            sut,
+            toCompleteWithError: .invalidData,
+            when: {
+                let invalidJSON = Data("invalidJSON".utf8)
+                client.complete(withStatusCode: 200, data: invalidJSON)
+        })
     }
 
 }
