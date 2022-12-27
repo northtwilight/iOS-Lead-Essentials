@@ -76,6 +76,30 @@ final class RemoteFeedLoaderTests: XCTestCase {
             XCTAssertEqual(capturedResults, [result], file: file, line: line)
         }
     
+    // Helper: Factory method for item creation
+    private func makeItem(
+        id: UUID,
+        description: String? = nil,
+        location: String? = nil,
+        imageURL: URL) -> (model: FeedItem, json: [String: Any]) {
+            let item = FeedItem(
+                id: id,
+                description: description,
+                location: location,
+                imageURL: imageURL)
+            
+            let json = [
+                "id": id.uuidString,
+                "description": description,
+                "location": location,
+                "image": imageURL.absoluteString
+                // Maybe sub this with compactMap???
+            ].reduce(into: [String: Any]()) { (accumulated, element) in
+                if let value = element.value { accumulated[element.key] = value }
+            }
+            return (item, json)
+        }
+    
     func test_init_doesNotRequestDataFromURL() {
         let url = URL(string: Constants.aDotUrl)!
         let (_, client) = makeSUT(url: url)
@@ -158,39 +182,22 @@ final class RemoteFeedLoaderTests: XCTestCase {
     func test_load_deliversItemsOn200HTTPResponseWithValidJSON() {
         let (sut, client) = makeSUT()
         
-        let itemOne = FeedItem(
+        let itemOne = makeItem(
             id: UUID(),
-            description: nil,
-            location: nil,
             imageURL: URL(string: Constants.aDotUrl)!)
         
-        let itemOneJSON = [
-            "id": itemOne.id.uuidString,
-            "image": itemOne.imageURL.absoluteString
-        ]
-        
-        let itemTwo = FeedItem(
+        let itemTwo = makeItem(
             id: UUID(),
             description: "A description",
             location: "A location",
             imageURL: URL(string: Constants.aGivenUrl)!)
         
-        let itemTwoJSON = [
-            "id": itemTwo.id.uuidString,
-            "description": itemTwo.description,
-            "location": itemTwo.location,
-            "image": itemTwo.imageURL.absoluteString
-        ]
-        
-        let itemsJSON = [
-            "items" : [
-                itemOneJSON, itemTwoJSON
-            ]
-        ]
+        let itemsJSON = ["items" : [ itemOne.json, itemTwo.json ]]
+        let items = [itemOne.model, itemTwo.model]
         
         expect(
             sut,
-            toCompleteWith: .success([itemOne, itemTwo]),
+            toCompleteWith: .success(items),
             when: {
                 let jsonData = try! JSONSerialization.data(withJSONObject: itemsJSON)
                 client.complete(withStatusCode: 200, data: jsonData)
