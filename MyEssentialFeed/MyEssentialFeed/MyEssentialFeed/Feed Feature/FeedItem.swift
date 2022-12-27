@@ -26,6 +26,7 @@ extension FeedItem: Decodable {
         case id
         case description
         case location
+        // Inadvertent leaking of API detail into our model. Avoid
         case imageURL = "image"
     }
 }
