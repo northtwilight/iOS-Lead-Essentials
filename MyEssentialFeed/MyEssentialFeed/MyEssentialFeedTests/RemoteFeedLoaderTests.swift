@@ -27,7 +27,7 @@ private class HTTPClientSpy: HTTPClient {
     
     func complete(
         withStatusCode code: Int,
-        data: Data = Data(),
+        data: Data,
         at index: Int = 0) {
         let response = HTTPURLResponse(
             url: requestedURLs[index],
@@ -157,7 +157,8 @@ final class RemoteFeedLoaderTests: XCTestCase {
                     sut,
                     toCompleteWith: .failure(.invalidData),
                     when: {
-                        client.complete(withStatusCode: code, at: index)
+                        let json = makeItemsJSON( [] )
+                        client.complete(withStatusCode: code, data: json, at: index)
                     })
             }
     }
