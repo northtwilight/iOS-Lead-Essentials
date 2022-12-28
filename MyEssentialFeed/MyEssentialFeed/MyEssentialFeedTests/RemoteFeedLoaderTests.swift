@@ -64,11 +64,11 @@ final class RemoteFeedLoaderTests: XCTestCase {
     
     private func expect(
         _ sut: RemoteFeedLoader,
-        toCompleteWith result: RemoteFeedLoader.Result,
+        toCompleteWith result: Result<[FeedItem], RemoteFeedLoader.Error>,
         file: StaticString = #file,
         line: UInt = #line,
         when action: () -> Void) {
-            var capturedResults = [RemoteFeedLoader.Result]()
+            var capturedResults = [Result<[FeedItem], RemoteFeedLoader.Error>]()
             sut.load { capturedResults.append($0) }
             
             action()
@@ -138,15 +138,19 @@ final class RemoteFeedLoaderTests: XCTestCase {
     }
     
     func test_load_deliversErrorOnClientError() {
+        // Arrange: Given a system to test and a client
         let (sut, client) = makeSUT()
         
+        // Act: We fail to complete with a connection error
         expect(sut, toCompleteWith: .failure(.connectivity), when: {
+            // Assert: The client shows that error as its completion status
             let clientError = NSError(domain: "Test", code: 0)
             client.complete(with: clientError, at: 0)
         })
     }
     
     func test_load_deliversErrorOnNon200HTTPResponse() {
+        // Arrange: Given we have a SUT and client, plus sample status codes
         let (sut, client) = makeSUT()
         let samples = [199, 201, 300, 400, 500]
         
@@ -155,37 +159,46 @@ final class RemoteFeedLoaderTests: XCTestCase {
             .forEach { index, code in
                 expect(
                     sut,
+                    // Act: Where the status code indicates invalid data
                     toCompleteWith: .failure(.invalidData),
                     when: {
                         let json = makeItemsJSON( [] )
+                        // Assert: We should see errors when non 200 codes encountered.
                         client.complete(withStatusCode: code, data: json, at: index)
                     })
             }
     }
     
     func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() {
+        // Arrange: Given we have a SUT and client
         let (sut, client) = makeSUT()
         
         expect(
             sut,
             toCompleteWith: .failure(.invalidData),
             when: {
+                // Act: We have invalid JSON for use
                 let invalidJSON = Data("invalidJSON".utf8)
+                // Assert: The client fails with an error
                 client.complete(withStatusCode: 200, data: invalidJSON)
             })
     }
     
     func test_load_deliversNoItemsOn200HTTPResponseWithEmptyJSONList() {
+        // Arrange: Given we have a SUT and client
         let (sut, client) = makeSUT()
         
         expect(sut, toCompleteWith: .success([]), when: {
+            // Act: When we supply JSON with no content
             let emptyListJSON = Data(bytes: "{\"items\": []}".utf8)
+            // Assert: We get no items to show, even as the response is OK.
             client.complete(withStatusCode: 200, data: emptyListJSON)
         })
     }
     
     // happy path
     func test_load_deliversItemsOn200HTTPResponseWithValidJSON() {
+        // Arrange: Given we have a SUT and client
         let (sut, client) = makeSUT()
         
         let itemOne = makeItem(
@@ -204,7 +217,9 @@ final class RemoteFeedLoaderTests: XCTestCase {
             sut,
             toCompleteWith: .success(items),
             when: {
+                // Act: We load up the correct JSON for two items
                 let json = makeItemsJSON([itemOne.json, itemTwo.json])
+                // Assert: We get back two FeedItems as promised
                 client.complete(withStatusCode: 200, data: json)
             })
     }
