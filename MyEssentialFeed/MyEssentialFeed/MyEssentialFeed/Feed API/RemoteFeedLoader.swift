@@ -39,7 +39,7 @@ public final class RemoteFeedLoader {
             switch result {
             case let .success(data, response):
                 if response.statusCode == 200, let root = try? JSONDecoder().decode(Root.self, from: data) {
-                    completion(.success(root.items))
+                    completion(.success(root.items.map { $0.item }))
                 } else {
                     completion(.failure(.invalidData))
                 }
@@ -51,5 +51,22 @@ public final class RemoteFeedLoader {
 }
 
 private struct Root: Decodable {
-    let items: [FeedItem]
+    let items: [Item]
+}
+
+// We implement this private struct to get around & remove
+// the API leaking into the FeedItem model.
+private struct Item: Decodable {
+    let id: UUID
+    let description: String?
+    let location: String?
+    let image: URL
+    
+    var item: FeedItem {
+        return FeedItem(
+            id: id,
+            description: description,
+            location: location,
+            imageURL: image) //  <-- Aha!
+    }
 }
