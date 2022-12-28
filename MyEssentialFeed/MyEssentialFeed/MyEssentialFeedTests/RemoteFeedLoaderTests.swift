@@ -100,6 +100,11 @@ final class RemoteFeedLoaderTests: XCTestCase {
             return (item, json)
         }
     
+    private func makeItemsJSON(_ items: [[String: Any]]) -> Data {
+        let json = ["items": items]
+        return try! JSONSerialization.data(withJSONObject: json)
+    }
+    
     func test_init_doesNotRequestDataFromURL() {
         let url = URL(string: Constants.aDotUrl)!
         let (_, client) = makeSUT(url: url)
@@ -192,15 +197,14 @@ final class RemoteFeedLoaderTests: XCTestCase {
             location: "A location",
             imageURL: URL(string: Constants.aGivenUrl)!)
         
-        let itemsJSON = ["items" : [ itemOne.json, itemTwo.json ]]
         let items = [itemOne.model, itemTwo.model]
         
         expect(
             sut,
             toCompleteWith: .success(items),
             when: {
-                let jsonData = try! JSONSerialization.data(withJSONObject: itemsJSON)
-                client.complete(withStatusCode: 200, data: jsonData)
+                let json = makeItemsJSON([itemOne.json, itemTwo.json])
+                client.complete(withStatusCode: 200, data: json)
             })
     }
 }
