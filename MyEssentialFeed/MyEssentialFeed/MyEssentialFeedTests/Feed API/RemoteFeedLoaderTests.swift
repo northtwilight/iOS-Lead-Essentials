@@ -21,7 +21,7 @@ private class HTTPClientSpy: HTTPClient {
     
     func complete(with error: Error, at index: Int = 0) {
         if case let error = error {
-            messages[index].completion(.failure(error))
+            messages[index].completion(failure(error))
         }
     }
     
@@ -98,7 +98,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
                 case let (.success(receivedItems), .success(expectedItems)):
                     XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
                     
-                case let (.failure(receivedError), .failure(expectedError)):
+                case let (failure(receivedError), failure(expectedError)):
                     XCTAssertEqual(receivedError, expectedError, file: file , line: line)
                     
                 default:
@@ -112,6 +112,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
 
     
     // Helper: Factory method for item creation
+    
     private func makeItem(
         id: UUID,
         description: String? = nil,
@@ -139,6 +140,15 @@ final class RemoteFeedLoaderTests: XCTestCase {
         let json = ["items": items]
         return try! JSONSerialization.data(withJSONObject: json)
     }
+    
+    // By using factory methods in the test scope, we also prevent our
+    // test methods from breaking in the future if we ever decide to
+    // change production types again
+    private func failure(_ error: RemoteFeedLoader.Error) -> Result<[FeedItem], RemoteFeedLoader.Error> {
+        return .failure(error)
+    }
+    
+    // MARK: Tests
     
     func test_init_doesNotRequestDataFromURL() {
         let url = URL(string: Constants.aDotUrl)!
@@ -177,7 +187,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         let (sut, client) = makeSUT()
         
         // Act: We fail to complete with a connection error
-        expect(sut, toCompleteWith: .failure(.connectivity), when: {
+        expect(sut, toCompleteWith: failure(.connectivity), when: {
             // Assert: The client shows that error as its completion status
             let clientError = NSError(domain: "Test", code: 0)
             client.complete(with: clientError, at: 0)
@@ -195,7 +205,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
                 expect(
                     sut,
                     // Act: Where the status code indicates invalid data
-                    toCompleteWith: .failure(.invalidData),
+                    toCompleteWith: failure(.invalidData),
                     when: {
                         let json = makeItemsJSON( [] )
                         // Assert: We should see errors when non 200 codes encountered.
@@ -210,7 +220,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         
         expect(
             sut,
-            toCompleteWith: .failure(.invalidData),
+            toCompleteWith: failure(.invalidData),
             when: {
                 // Act: We have invalid JSON for use
                 let invalidJSON = Data("invalidJSON".utf8)
