@@ -75,28 +75,41 @@ final class RemoteFeedLoaderTests: XCTestCase {
         _ instance: AnyObject,
         file: StaticString = #file,
         line: UInt = #line) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(
-                instance,
-                Constants.deallocWarningMemLeak,
-                file: file,
-                line: line)
+            addTeardownBlock { [weak instance] in
+                XCTAssertNil(
+                    instance,
+                    Constants.deallocWarningMemLeak,
+                    file: file,
+                    line: line)
+            }
         }
-    }
     
     private func expect(
         _ sut: RemoteFeedLoader,
-        toCompleteWith result: Result<[FeedItem], RemoteFeedLoader.Error>,
+        toCompleteWith expectedResult: Result<[FeedItem], RemoteFeedLoader.Error>,
         file: StaticString = #file,
         line: UInt = #line,
         when action: () -> Void) {
-            var capturedResults = [Result<[FeedItem], RemoteFeedLoader.Error>]()
-            sut.load { capturedResults.append($0) }
+            let expectation = expectation(description: "Wait for load completion")
             
-            action()
-            
-            XCTAssertEqual(capturedResults, [result], file: file, line: line)
-        }
+            sut.load { receivedResult in
+                switch (receivedResult, expectedResult) {
+                    
+                case let (.success(receivedItems), .success(expectedItems)):
+                    XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
+                    
+                case let (.failure(receivedError), .failure(expectedError)):
+                    XCTAssertEqual(receivedError, expectedError, file: file , line: line)
+                    
+                default:
+                    XCTFail("Expected result \(expectedResult); got \(receivedResult) instead", file: file, line: line)
+                }
+                expectation.fulfill()
+            }
+            action ()
+            wait(for: [expectation], timeout: 1.0)
+    }
+
     
     // Helper: Factory method for item creation
     private func makeItem(
