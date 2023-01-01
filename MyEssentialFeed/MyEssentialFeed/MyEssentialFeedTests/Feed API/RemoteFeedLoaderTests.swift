@@ -21,7 +21,7 @@ private class HTTPClientSpy: HTTPClient {
     
     func complete(with error: Error, at index: Int = 0) {
         if case let error = error {
-            messages[index].completion(failure(error))
+            messages[index].completion(.failure(error))
         }
     }
     
@@ -86,7 +86,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
     
     private func expect(
         _ sut: RemoteFeedLoader,
-        toCompleteWith expectedResult: Result<[FeedItem], RemoteFeedLoader.Error>,
+        toCompleteWith expectedResult: LoadFeedResult,
         file: StaticString = #file,
         line: UInt = #line,
         when action: () -> Void) {
@@ -94,13 +94,13 @@ final class RemoteFeedLoaderTests: XCTestCase {
             
             sut.load { receivedResult in
                 switch (receivedResult, expectedResult) {
-                    
-                case let (.success(receivedItems), .success(expectedItems)):
+
+                case (let .success(receivedItems), let .success(expectedItems)):
                     XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
-                    
-                case let (failure(receivedError), failure(expectedError)):
-                    XCTAssertEqual(receivedError, expectedError, file: file , line: line)
-                    
+
+                case (let .failure(receivedError), let .failure(expectedError)):
+                    XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+
                 default:
                     XCTFail("Expected result \(expectedResult); got \(receivedResult) instead", file: file, line: line)
                 }
@@ -144,7 +144,8 @@ final class RemoteFeedLoaderTests: XCTestCase {
     // By using factory methods in the test scope, we also prevent our
     // test methods from breaking in the future if we ever decide to
     // change production types again
-    private func failure(_ error: RemoteFeedLoader.Error) -> Result<[FeedItem], RemoteFeedLoader.Error> {
+    // private func failure(_ error: RemoteFeedLoader.Error) -> Result<[FeedItem], RemoteFeedLoader.Error> {
+    private func failure(_ error: RemoteFeedLoader.Error) -> LoadFeedResult {
         return .failure(error)
     }
     
@@ -274,7 +275,8 @@ final class RemoteFeedLoaderTests: XCTestCase {
         let client = HTTPClientSpy()
         var sut: RemoteFeedLoader? = RemoteFeedLoader(url: url, client: client)
         
-        var capturedResults = [Result<[FeedItem], RemoteFeedLoader.Error>]()
+        //var capturedResults = [Result<[FeedItem], RemoteFeedLoader.Error>]()
+        var capturedResults = [LoadFeedResult]()
         sut?.load { capturedResults.append($0) }
         
         sut = nil
