@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DuG-Tk-AJd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DuG-Tk-AJd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,52 +33,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjf-m5-Q6D">
-                                <rect key="frame" x="0.0" y="0.0" width="195" height="65"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="THI-tg-Rej"/>
-                                    <constraint firstAttribute="width" constant="195" id="gTl-Yl-DgN"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="OmU-xD-QQi" kind="embed" identifier="PlayerOne" id="p6T-9W-sgd"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LE1-CU-FEu">
-                                <rect key="frame" x="219" y="0.0" width="195" height="65"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="195" id="4CJ-ww-1SC"/>
-                                    <constraint firstAttribute="height" constant="65" id="gh5-eg-Z5z"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="Pvn-l6-PiS" kind="embed" identifier="PlayerTwo" id="Cnd-4j-W1P"/>
-                                </connections>
-                            </containerView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRz-8n-RQc">
-                                <rect key="frame" x="195" y="0.0" width="24" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1u-9k-zm8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b15-BU-Vmi">
-                                        <rect key="frame" x="3" y="21" width="18" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LE1-CU-FEu">
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="65"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="145" id="4CJ-ww-1SC"/>
+                                            <constraint firstAttribute="height" constant="65" id="gh5-eg-Z5z"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="Pvn-l6-PiS" kind="embed" identifier="PlayerTwo" id="Cnd-4j-W1P"/>
+                                        </connections>
+                                    </containerView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRz-8n-RQc">
+                                        <rect key="frame" x="145" y="0.0" width="124" height="65"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b15-BU-Vmi">
+                                                <rect key="frame" x="53" y="22" width="18" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="b15-BU-Vmi" firstAttribute="centerX" secondItem="DRz-8n-RQc" secondAttribute="centerX" id="LXJ-XS-8oG"/>
+                                            <constraint firstItem="b15-BU-Vmi" firstAttribute="centerY" secondItem="DRz-8n-RQc" secondAttribute="centerY" id="QTl-Kr-ipT"/>
+                                        </constraints>
+                                    </view>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjf-m5-Q6D">
+                                        <rect key="frame" x="269" y="0.0" width="145" height="65"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="THI-tg-Rej"/>
+                                            <constraint firstAttribute="width" constant="145" id="gTl-Yl-DgN"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="OmU-xD-QQi" kind="embed" identifier="PlayerOne" id="p6T-9W-sgd"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cjf-m5-Q6D" secondAttribute="trailing" id="hmT-1W-fdY"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nHB-Wz-VYG"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LE1-CU-FEu" firstAttribute="width" secondItem="cjf-m5-Q6D" secondAttribute="width" id="AsY-ZT-67Q"/>
-                            <constraint firstItem="LE1-CU-FEu" firstAttribute="height" secondItem="cjf-m5-Q6D" secondAttribute="height" id="Vwx-HR-a9e"/>
-                            <constraint firstItem="LE1-CU-FEu" firstAttribute="top" secondItem="tof-eO-Fwm" secondAttribute="top" id="cgw-II-8gt"/>
-                            <constraint firstItem="cjf-m5-Q6D" firstAttribute="top" secondItem="tof-eO-Fwm" secondAttribute="top" id="ijB-ob-ihc"/>
-                            <constraint firstAttribute="trailing" secondItem="LE1-CU-FEu" secondAttribute="trailing" id="zU7-ah-7fl"/>
-                            <constraint firstItem="cjf-m5-Q6D" firstAttribute="leading" secondItem="tof-eO-Fwm" secondAttribute="leading" id="zlx-YP-GV1"/>
+                            <constraint firstItem="f1u-9k-zm8" firstAttribute="leading" secondItem="nHB-Wz-VYG" secondAttribute="leading" id="4ya-Yv-Iar"/>
+                            <constraint firstItem="f1u-9k-zm8" firstAttribute="trailing" secondItem="nHB-Wz-VYG" secondAttribute="trailing" id="g6b-5h-uJP"/>
+                            <constraint firstItem="nHB-Wz-VYG" firstAttribute="bottom" secondItem="f1u-9k-zm8" secondAttribute="bottom" id="oj6-Ij-opV"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Multiplayer" id="Xu5-5D-xQ7"/>

@@ -144,7 +144,6 @@ final class RemoteFeedLoaderTests: XCTestCase {
     // By using factory methods in the test scope, we also prevent our
     // test methods from breaking in the future if we ever decide to
     // change production types again
-    // private func failure(_ error: RemoteFeedLoader.Error) -> Result<[FeedItem], RemoteFeedLoader.Error> {
     private func failure(_ error: RemoteFeedLoader.Error) -> LoadFeedResult {
         return .failure(error)
     }
@@ -274,8 +273,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         let url = URL(string: Constants.anyURL)!
         let client = HTTPClientSpy()
         var sut: RemoteFeedLoader? = RemoteFeedLoader(url: url, client: client)
-        
-        //var capturedResults = [Result<[FeedItem], RemoteFeedLoader.Error>]()
+
         var capturedResults = [LoadFeedResult]()
         sut?.load { capturedResults.append($0) }
         
