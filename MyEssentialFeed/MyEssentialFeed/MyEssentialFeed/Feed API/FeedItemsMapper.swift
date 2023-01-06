@@ -37,7 +37,7 @@ internal final class FeedItemsMapper {
         guard response.statusCode == OK_200,
             let root = try? JSONDecoder().decode(Root.self, from: data)
         else {
-            throw RemoteFeedLoader.Error.invalidData
+            throw RemoteError.invalidData
         }
         return root.items.map { $0.item }
     }
@@ -46,7 +46,7 @@ internal final class FeedItemsMapper {
         guard response.statusCode == OK_200,
               let root = try? JSONDecoder().decode(Root.self, from: data)
         else {
-            return .failure(RemoteFeedLoader.Error.invalidData)
+            return .failure(RemoteError.invalidData)
         }
         let items = root.items.map { $0.item }
         return .success(root.feed )

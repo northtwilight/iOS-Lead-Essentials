@@ -7,10 +7,6 @@
 
 import Foundation
 
-// Just in case?
-typealias FeedItemWithErrorResult = Result<[FeedItem], Error>
-typealias FeedItemWithErrorCompletionResult = Result<[FeedItem], Error>
-
 public protocol FeedLoader {
     func load(completion: @escaping (LoadFeedResult) -> Void)
 }

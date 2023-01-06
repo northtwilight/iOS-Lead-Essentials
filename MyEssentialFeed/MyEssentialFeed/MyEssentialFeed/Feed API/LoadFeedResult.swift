@@ -7,9 +7,14 @@
 
 import Foundation
 
+
+// What I want to use instead, without the inane typealias
+typealias FeedItemWithErrorResult = Result<[FeedItem], Error>
+
+
 public enum LoadFeedResult: Equatable {
     case success([FeedItem])
-    case failure(RemoteFeedLoader.Error)
+    case failure(RemoteError)
     
     /// Returns a Boolean value indicating whether two values are equal.
     ///
