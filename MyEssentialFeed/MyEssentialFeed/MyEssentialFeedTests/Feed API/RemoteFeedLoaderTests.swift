@@ -86,7 +86,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
     
     private func expect(
         _ sut: RemoteFeedLoader,
-        toCompleteWith expectedResult: LoadFeedResult,
+        toCompleteWith expectedResult: RemoteFeedLoader.Result,
         file: StaticString = #file,
         line: UInt = #line,
         when action: () -> Void) {
@@ -98,7 +98,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
                 case (let .success(receivedItems), let .success(expectedItems)):
                     XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
 
-                case (let .failure(receivedError), let .failure(expectedError)):
+                case (let .failure(receivedError as RemoteFeedLoader.Error), let .failure(expectedError as RemoteFeedLoader.Error)):
                     XCTAssertEqual(receivedError, expectedError, file: file, line: line)
 
                 default:
@@ -187,7 +187,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         let (sut, client) = makeSUT()
         
         // Act: We fail to complete with a connection error
-        expect(sut, toCompleteWith: failure(.connectivity), when: {
+        expect(sut, toCompleteWith: failure(RemoteFeedLoader.Error.connectivity), when: {
             // Assert: The client shows that error as its completion status
             let clientError = NSError(domain: "Test", code: 0)
             client.complete(with: clientError, at: 0)
@@ -205,7 +205,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
                 expect(
                     sut,
                     // Act: Where the status code indicates invalid data
-                    toCompleteWith: failure(.invalidData),
+                    toCompleteWith: failure(RemoteFeedLoader.Error.invalidData),
                     when: {
                         let json = makeItemsJSON( [] )
                         // Assert: We should see errors when non 200 codes encountered.
@@ -220,7 +220,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         
         expect(
             sut,
-            toCompleteWith: failure(.invalidData),
+            toCompleteWith: failure(RemoteFeedLoader.Error.invalidData),
             when: {
                 // Act: We have invalid JSON for use
                 let invalidJSON = Data("invalidJSON".utf8)
@@ -235,7 +235,8 @@ final class RemoteFeedLoaderTests: XCTestCase {
         
         expect(sut, toCompleteWith: .success([]), when: {
             // Act: When we supply JSON with no content
-            let emptyListJSON = Data(bytes: "{\"items\": []}".utf8)
+            // let emptyListJSON = Data(bytes: "{\"items\": []}".utf8)
+            let emptyListJSON = Data("{\"items\": []}".utf8)
             // Assert: We get no items to show, even as the response is OK.
             client.complete(withStatusCode: 200, data: emptyListJSON)
         })
